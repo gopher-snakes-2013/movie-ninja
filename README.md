@@ -7,7 +7,7 @@ Coordinate movie showings with friends. Pick from movies (either recently releas
 Features (MVP)
 --------
 
-* creator is a registered user
+* User can register
 * RU can search for movies from database
 * RU can creates list of movies
 * RU can send out custom link
