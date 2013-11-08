@@ -6,9 +6,21 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
+  <% if flash[:error] %>
+      <div class='error'><%= flash[:error] %></div>
+  <% end %>
+
+  <% if signed_in? %>
+    <%= button_to "logout", session_path(current_user), method: :delete %>
+  <% else %>
+    <%= render partial: "layouts/signup", locals: {user: @user} %>
+    <%= render partial: "layouts/signin", locals: {user: @user} %>
+  <%end%>
+
 <body>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
