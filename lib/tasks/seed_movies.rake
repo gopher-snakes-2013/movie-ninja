@@ -65,3 +65,9 @@ namespace :db do
     desc 'drop, create, migrate, seed_movies'
   end
 end
+
+namespace :db do
+  task :reset => [:environment, :drop, :create, :migrate] do
+    desc 'drop, create, migrate'
+  end
+end
