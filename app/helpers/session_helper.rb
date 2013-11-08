@@ -2,6 +2,7 @@ module SessionHelper
 
   def logout
     session.clear
+    @current_user = nil
   end
 
   def current_user
