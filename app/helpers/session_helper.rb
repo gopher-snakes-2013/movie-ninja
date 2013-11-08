@@ -15,7 +15,6 @@ module SessionHelper
 
   def destroy
     logout
-    render text: "#{session[:id]}"
   end
 
 end
