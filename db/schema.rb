@@ -30,9 +30,15 @@ ActiveRecord::Schema.define(:version => 20131108221803) do
   end
 
   create_table "surveys", :force => true do |t|
-    t.integer "user_id"
-    t.string  "survey_url"
-    t.text    "survey_info"
+    t.integer  "user_id"
+    t.string   "url"
+    t.text     "info"
+    t.datetime "first_available_datetime"
+    t.datetime "last_available_datetime"
+    t.string   "location_info"
+    t.string   "zipcode"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
 end

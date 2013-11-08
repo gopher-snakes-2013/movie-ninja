@@ -4,6 +4,7 @@ gem 'rails', '3.2.14'
 gem 'pg'
 gem 'jquery-rails'
 gem 'rottentomatoes'
+gem 'simple_form'
 
 group :development do
   gem 'better_errors'
