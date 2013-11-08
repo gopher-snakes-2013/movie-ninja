@@ -10,7 +10,7 @@
 
 
 <% if signed_in? %>
-  <% button_for "logout", user_path %>
+  <% button_to "logout", user_path %>
 <% else %>
     <%= form_for @user do |f| %>
       <%= f.text_field :email, placeholder: 'email' %>
