@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      render text: "FAIL"
+      redirect_to root_path, flash: { error: @user.errors.full_messages.to_sentence }
     end
   end
 
