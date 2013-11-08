@@ -59,3 +59,9 @@ namespace :db do
     end
   end
 end
+
+namespace :db do
+  task :bounce => [:environment, :drop, :create, :migrate, :seed_movies] do
+    desc 'drop, create, migrate, seed_movies'
+  end
+end
