@@ -6,7 +6,28 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
+
+
+<% if signed_in? %>
+  <% button_for "logout", user_path %>
+<% else %>
+    <%= form_for @user do |f| %>
+      <%= f.text_field :email, placeholder: 'email' %>
+      <%= f.password_field :password, placeholder: 'password' %>
+      <%= f.submit 'Sign Up' %>
+    <% end %>
+
+    <%= form_for @user, url: sessions_path do |f| %>
+      <%= f.text_field :email, placeholder: 'email' %>
+      <%= f.password_field :password, placeholder: 'password' %>
+      <%= f.submit 'Sign In' %>
+    <% end %>
+<% end %>
+
+
 <body>
+
 
 <%= yield %>
 
