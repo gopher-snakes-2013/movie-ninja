@@ -5,6 +5,7 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'rottentomatoes'
 gem 'simple_form'
+gem 'bcrypt-ruby'
 
 group :development do
   gem 'better_errors'
