@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20131107235318) do
     t.string   "imdb_id"
     t.string   "mob_poster_url"
     t.string   "det_poster_url"
+    t.string   "release_date"
     t.integer  "rt_critics_score"
     t.integer  "rt_audience_score"
     t.string   "mpaa_rating"

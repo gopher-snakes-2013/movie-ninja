@@ -16,6 +16,7 @@ namespace :db do
       det_poster_url = ( rt_movie_data.posters ? rt_movie_data.posters.detailed : "http://26.media.tumblr.com/tumblr_l5tfabvA2z1qcbewio1_400.jpg" )
       rt_critics_score = ( rt_movie_data.ratings ? rt_movie_data.ratings.critics_score : 0 )
       rt_audience_score = ( rt_movie_data.ratings ? rt_movie_data.ratings.audience_score : 0 )
+      release_date = ( rt_movie_data.release_dates ? rt_movie_data.release_dates.theater : "" )
 
       new_movie.update_attributes({
         title:              rt_movie_data.title,
@@ -26,7 +27,8 @@ namespace :db do
         rt_audience_score:  rt_audience_score,
         mpaa_rating:        rt_movie_data.mpaa_rating,
         synopsis:           rt_movie_data.synopsis,
-        runtime:            rt_movie_data.runtime
+        runtime:            rt_movie_data.runtime,
+        release_date:       release_date
       })
     end
     in_theaters_movies = JSON(Rotten.get_url("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=" + Rotten.api_key + "&page_limit=50").body)["movies"].map { |movie| RottenMovie.new(movie, false) }
@@ -40,6 +42,7 @@ namespace :db do
       det_poster_url = ( rt_movie_data.posters ? rt_movie_data.posters.detailed : "http://26.media.tumblr.com/tumblr_l5tfabvA2z1qcbewio1_400.jpg" )
       rt_critics_score = ( rt_movie_data.ratings ? rt_movie_data.ratings.critics_score : 0 )
       rt_audience_score = ( rt_movie_data.ratings ? rt_movie_data.ratings.audience_score : 0 )
+      release_date = ( rt_movie_data.release_dates ? rt_movie_data.release_dates.theater : "" )
 
       new_movie.update_attributes({
         title:              rt_movie_data.title,
@@ -50,7 +53,8 @@ namespace :db do
         rt_audience_score:  rt_audience_score,
         mpaa_rating:        rt_movie_data.mpaa_rating,
         synopsis:           rt_movie_data.synopsis,
-        runtime:            rt_movie_data.runtime
+        runtime:            rt_movie_data.runtime,
+        release_date:       release_date
       })
     end
   end
