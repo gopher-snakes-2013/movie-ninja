@@ -7,5 +7,6 @@ class CreateSurveyMoviesTable < ActiveRecord::Migration
       t.string :location
 
       t.timestamps
+    end
   end
 end

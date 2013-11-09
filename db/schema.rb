@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131108221803) do
+ActiveRecord::Schema.define(:version => 20131109075008) do
 
   create_table "movies", :force => true do |t|
     t.string   "title"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(:version => 20131108221803) do
     t.datetime "updated_at",        :null => false
   end
 
+  create_table "survey_movies", :force => true do |t|
+    t.integer  "survey_id"
+    t.integer  "movie_id"
+    t.datetime "showtime"
+    t.string   "location"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "surveys", :force => true do |t|
     t.integer  "user_id"
     t.string   "url"
@@ -44,6 +53,13 @@ ActiveRecord::Schema.define(:version => 20131108221803) do
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "survey_movie_id"
+    t.string   "name"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
