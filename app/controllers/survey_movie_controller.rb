@@ -1,0 +1,3 @@
+class SurveyMoviesController < ApplicationController
+
+end
