@@ -12,6 +12,8 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
+    @movies = Movie.all
+
   end
 
 end

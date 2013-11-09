@@ -8,6 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 
+
+<body>
   <% if flash[:error] %>
       <div class='error'><%= flash[:error] %></div>
   <% end %>
@@ -19,8 +21,6 @@
     <%= render partial: "layouts/signup", locals: {user: @user} %>
     <%= render partial: "layouts/signin", locals: {user: @user} %>
   <%end%>
-
-<body>
 
   <%= yield %>
 

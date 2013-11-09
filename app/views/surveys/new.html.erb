@@ -1,3 +1,11 @@
+<div class = "movie-list pure-g-r">
+  <% @movies.each do |movie| %>
+    <%= render '/movies/movie-container', movie: movie %>
+  <% end %>
+</div>
+
+
+
 <%= simple_form_for @survey do |f| %>
   <%= f.input :info %>
   <%= f.input :location_info %>
