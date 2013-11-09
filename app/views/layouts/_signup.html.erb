@@ -1,7 +1,9 @@
-<p>Register</p>
-<%= simple_form_for @user, html: {id: 'form-register-user', class: 'form-register' } do |f| %>
-  <%= f.input :email, label: false, placeholder: 'email', input_html: { size: 20, id: 'form-sign-up-email' } %>
-  <%= f.input :password, label: false, required: true, placeholder: 'password', input_html: { size: 20, id: 'form-sign-up-password' }, error_html: { id: 'password_error'} %>
-  <%= f.input :password_confirmation, label: false, required: true, placeholder: 'password again', input_html: { size: 20, id: 'form-sign-up-password-confirm' } %>
-  <%= f.submit "sign up" %>
-<% end %>
+<p>Register:</p>
+  <%= simple_form_for @user, html: {id: 'form-register-user' , class: "form-register pure-form pure-form-stacked" } do |f| %>
+    <%= f.input :email, label: false, placeholder: 'email', input_html: { size: 20, id: 'form-sign-up-email' } %>
+    <%= f.input :password, label: false, required: true, placeholder: 'password', input_html: { size: 20, id: 'form-sign-up-password' }, error_html: { id: 'password_error'} %>
+    <%= f.input :password_confirmation, label: false, required: true, placeholder: 'password again', input_html: { size: 20, id: 'form-sign-up-password-confirm' } %>
+    <%= f.submit "sign-up", class: "pure-button pure-button-primary" %>
+  <% end %>
+
+

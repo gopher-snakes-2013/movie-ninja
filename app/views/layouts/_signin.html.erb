@@ -1,7 +1,7 @@
 <p>Sign in:</p>
-<%= simple_form_for @user, url: sessions_path, html: {id: 'form-sign-in-user', class: 'form-sign-in'} do |f| %>
+<%= simple_form_for @user, url: sessions_path, html: {id: 'form-sign-in-user', class: 'form-sign-in pure-form pure-form-stacked'} do |f| %>
   <%= f.input :email, label: false, placeholder: 'email', input_html: { size: 20, id: 'form-sign-in-email' } %>
   <%= f.input :password, label: false, required: true, placeholder: 'password', input_html: { size: 20, id: 'form-sign-in-password' } %>
-  <%= f.submit "sign in" %>
+  <%= f.submit "sign in", class: "pure-button pure-button-primary" %>
 <% end %>
 
