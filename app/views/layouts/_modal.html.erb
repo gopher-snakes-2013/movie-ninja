@@ -1,0 +1,30 @@
+<div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
+  <a class="pure-menu-heading" href="">Movie Ninja</a>
+  <ul>
+    <li>
+      <a href="#myModal" data-toggle="modal">Sign In / Sign Up</a>
+    </li>
+  </ul>
+</div>
+
+<!-- Button trigger modal -->
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h2 id="myModalLabel">Sign In / Sign Up</h2>
+  </div>
+
+  <div class="modal-body">
+    <form id="register" class="pure-form pure-form-stacked" >
+      <label for="email">Email</label>
+      <input id="email" type="text" placeholder="Email">
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Password">
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button class="pure-button" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="pure-button pure-button-primary" type="submit" form="register">Submit</button>
+  </div>
+</div>
