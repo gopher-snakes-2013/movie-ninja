@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by_email(params[:user][:email])
-
+    p params
     if @user && @user.authenticate(params[:user][:password])
-      session[:user_id] = @user.id
-      redirect_to root_path
+      session[:current_user_id] = @user.id
+      redirect_to new_survey_path
     else
       redirect_to root_path, flash: { error: 'Email or Password is Invalid' }
     end
