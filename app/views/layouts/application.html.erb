@@ -12,6 +12,7 @@
   <% end %>
 
   <% if signed_in? %>
+    <p class='sign-in-name'>Signed in as: <%= current_user.email %></p>
     <%= button_to "logout", session_path(current_user), method: :delete %>
   <% else %>
     <%= render partial: "layouts/signup", locals: {user: @user} %>

@@ -1,6 +1,7 @@
-<%= form_for user, url: sessions_path do |f| %>
-  <%= f.text_field :email, placeholder: 'email' %>
-  <%= f.password_field :password, placeholder: 'password' %>
-  <%= f.submit 'Sign In' %>
+<p>Sign in:</p>
+<%= simple_form_for @user, url: sessions_path, html: {id: 'form-sign-in-user', class: 'form-sign-in'} do |f| %>
+  <%= f.input :email, label: false, placeholder: 'email', input_html: { size: 20, id: 'form-sign-in-email' } %>
+  <%= f.input :password, label: false, required: true, placeholder: 'password', input_html: { size: 20, id: 'form-sign-in-password' } %>
+  <%= f.submit "sign in" %>
 <% end %>
 

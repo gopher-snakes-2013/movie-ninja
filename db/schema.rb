@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131108050703) do
+ActiveRecord::Schema.define(:version => 20131108221803) do
 
   create_table "movies", :force => true do |t|
     t.string   "title"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20131108050703) do
     t.string   "imdb_id"
     t.string   "mob_poster_url"
     t.string   "det_poster_url"
-    t.string   "release_date"
+    t.datetime "release_date"
     t.integer  "rt_critics_score"
     t.integer  "rt_audience_score"
     t.string   "mpaa_rating"
@@ -27,6 +27,18 @@ ActiveRecord::Schema.define(:version => 20131108050703) do
     t.integer  "runtime"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "surveys", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "url"
+    t.text     "info"
+    t.datetime "first_available_datetime"
+    t.datetime "last_available_datetime"
+    t.string   "location_info"
+    t.string   "zipcode"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   create_table "users", :force => true do |t|
