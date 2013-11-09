@@ -12,7 +12,7 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
-    @movies = Movie.all
+    @movies = Movie.all.sample(15)
 
   end
 

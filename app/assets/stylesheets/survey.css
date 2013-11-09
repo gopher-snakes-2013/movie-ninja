@@ -1,21 +1,25 @@
 .movie-list {
-  max-width: 1024px;
+  max-width: 740px;
   text-align: center;
   width: 100%;
 
 }
 
-.movie-container {
+.movie-box {
+  height: 300px;
+  display: inline-table;
+  margin: 0.5em;
 
 }
 
-.movie-container-poster {
-        height: 300px;
-      width: 213px;
+.movie-box-poster img {
+  max-height: 267px;
+  width: 180px;
+
 
 
 }
 
-.movie-container-title {
-  margin-top: 5px;
+.movie-box-title {
+  margin-top: 10px;
 }
