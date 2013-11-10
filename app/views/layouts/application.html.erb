@@ -13,10 +13,10 @@
 <body>
   <div class="navbar">
     <%= render partial: "layouts/modal" %>
-    <% if flash[:error] %>
-        <div class='error'><%= flash[:error] %></div>
-    <% end %>
   </div>
+  <% if flash[:error] %>
+      <div class='error'><%= flash[:error] %></div>
+  <% end %>
   <div class="container">
     <%= yield %>
   </div>

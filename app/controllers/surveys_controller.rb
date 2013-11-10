@@ -11,8 +11,9 @@ class SurveysController < ApplicationController
   end
 
   def new
+    enforce_login
     @survey = Survey.new
-    @movies = Movie.first(21)
+    @movies = Movie.all.sample(21)
     @user = current_user
   end
 
