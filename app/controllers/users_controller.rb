@@ -18,12 +18,4 @@ class UsersController < ApplicationController
       redirect_to root_path, flash: { error: @user.errors.full_messages.to_sentence }
     end
   end
-
-  def preview_user
-    @user = current_user
-    respond_to do |format|
-      format.js { render :layout => false }
-    end
-  end
-
 end
