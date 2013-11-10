@@ -12,7 +12,6 @@ namespace :db do
     on_connect_json.each do |movie|
       oc_title = movie['title'].titleize
       p oc_title
-      movie_id = Movie.where(title: oc_title).first.id
       tms_id = movie['tmsId']
       mpaa_rating = (movie['ratings'] ? movie['ratings'][0]['code'] : "n/a")
       release_year = movie['releaseYear']
@@ -20,7 +19,6 @@ namespace :db do
         new_showtime = Showtime.new
         new_showtime.title = oc_title
         new_showtime.tms_id = tms_id
-        new_showtime.movie_id = movie_id if movie_id
         new_showtime.mpaa_rating = mpaa_rating
         new_showtime.release_year = release_year
         new_showtime.theater_name = showtime['theatre']['name']
