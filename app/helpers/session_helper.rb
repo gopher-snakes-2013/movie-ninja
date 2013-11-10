@@ -17,4 +17,11 @@ module SessionHelper
     logout
   end
 
+  def enforce_login
+    if !signed_in?
+      redirect_to root_path
+      flash[:error] = "You must be logged in to access that page."
+    end
+  end
+
 end

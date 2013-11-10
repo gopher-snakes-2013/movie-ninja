@@ -8,3 +8,11 @@
   border-radius: 10px;
   background-color: #EFEFEF;
 }
+
+.error {
+  margin: 50px 100px;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: rgb(242, 222, 222);
+}
