@@ -1,5 +1,12 @@
-<%= simple_form_for @survey do |f| %>
-  <%= f.input :info %>
-  <%= f.input :location_info %>
-  <%= f.button :submit %>
-<% end %>
+<div id="sidebar">
+  <div id="sidebar-content">
+    My Survey
+    <div id="picked-movies"></div>
+    <form action="/surveys" method="post">
+      <input type="date" id="datepicker">
+      <textarea id="survey-comment" placeholder="Anything else you want your firends to know..."></textarea>
+      <input type="submit" class="pure-button pure-button-small" id='submit-survey'>
+    </form>
+  </div>
+</div>
+

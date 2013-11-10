@@ -10,22 +10,23 @@
 </div>
 
 <!-- Button trigger modal -->
-
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <h2 id="myModalLabel">Sign In / Sign Up</h2>
-  </div>
-
-  <div class="modal-body pure-g">
-    <div class="pure-u-1-2">
-      <%= render partial: "layouts/signup", locals: {user: @user} %>
+<% unless signed_in? %>
+  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <h2 id="myModalLabel">Sign In / Sign Up</h2>
     </div>
-    <div class="pure-u-1-2">
-      <%= render partial: "layouts/signin", locals: {user: @user} %>
+
+    <div class="modal-body pure-g">
+      <div class="pure-u-1-2">
+        <%= render partial: "layouts/signup", locals: {user: @user} %>
+      </div>
+      <div class="pure-u-1-2">
+        <%= render partial: "layouts/signin", locals: {user: @user} %>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="pure-button" data-dismiss="modal" aria-hidden="true">Close</button>
     </div>
   </div>
-
-  <div class="modal-footer">
-    <button class="pure-button" data-dismiss="modal" aria-hidden="true">Close</button>
-  </div>
-</div>
+<% end %>

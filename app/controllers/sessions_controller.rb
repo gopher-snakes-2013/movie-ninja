@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to new_survey_path
     else
       redirect_to root_path, flash: { error: 'Email or Password is Invalid' }
     end
