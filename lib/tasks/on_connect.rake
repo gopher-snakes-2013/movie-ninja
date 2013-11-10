@@ -11,13 +11,16 @@ namespace :db do
 
     on_connect_json.each do |movie|
       new_showtime = Showtime.new
+      new_showtime.title = movie['title']
+      new_showtime.tms_id = movie['tmsId']
+      # new_showtime.mpaa_rating = movie['ratings'][0]['code']
+      new_showtime.release_year = movie['releaseYear']
       movie['showtimes'].each do |showtime|
-
-        new_showtime.title = movie['title']
-
         new_showtime.theater_name = showtime['theatre']['name']
+        new_showtime.theater_id = showtime['theatre']['id']
         new_showtime.theater_showtime = showtime['dateTime']
       end
+      new_showtime.save
     end
 
 
