@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'rottentomatoes'
 gem 'simple_form'
 gem 'bcrypt-ruby'
+gem 'httparty'
 
 group :development do
   gem 'better_errors'
