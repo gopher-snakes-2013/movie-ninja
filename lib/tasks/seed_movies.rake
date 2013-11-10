@@ -19,7 +19,7 @@ namespace :db do
       release_date = ( rt_movie_data.release_dates ? rt_movie_data.release_dates.theater : "" )
 
       new_movie.update_attributes({
-        title:              rt_movie_data.title,
+        title:              rt_movie_data.title.titleize,
         imdb_id:            imdb_id,
         mob_poster_url:     mob_poster_url,
         det_poster_url:     det_poster_url,
@@ -45,7 +45,7 @@ namespace :db do
       release_date = ( rt_movie_data.release_dates ? rt_movie_data.release_dates.theater : "" )
 
       new_movie.update_attributes({
-        title:              rt_movie_data.title,
+        title:              rt_movie_data.title.titleize,
         imdb_id:            imdb_id,
         mob_poster_url:     mob_poster_url,
         det_poster_url:     det_poster_url,
