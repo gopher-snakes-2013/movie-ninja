@@ -12,8 +12,8 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
-    @movies = Movie.all.sample(15)
-
+    @movies = Movie.first(21)
+    @user = current_user
   end
 
 end
