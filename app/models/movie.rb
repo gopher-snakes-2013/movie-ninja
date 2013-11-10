@@ -3,6 +3,7 @@ class Movie < ActiveRecord::Base
 
   validates :title, presence: :true
 
-  has_many :survey_movies, :showtimes
+  has_many :survey_movies
+  has_many :showtimes
   has_many :surveys, through: :survey_movies
 end
