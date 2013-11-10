@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
 
+  include SessionHelper
+
   def index
-    @user = User.new
+    @user = current_user || User.new
   end
 
   def create
@@ -11,9 +13,16 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:current_user_id] = @user.id
-      redirect_to root_path
+      redirect_to new_survey_path
     else
       redirect_to root_path, flash: { error: @user.errors.full_messages.to_sentence }
+    end
+  end
+
+  def preview_user
+    @user = current_user
+    respond_to do |format|
+      format.js { render :layout => false }
     end
   end
 

@@ -3,7 +3,6 @@
   margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
-  background-color: aqua;
   margin-bottom: 3em;
   border-radius: 10px;
   background-color: #EFEFEF;
@@ -15,4 +14,8 @@
   border: 1px solid;
   border-radius: 5px;
   background-color: rgb(242, 222, 222);
+}
+
+form {
+  width: 100px;
 }
