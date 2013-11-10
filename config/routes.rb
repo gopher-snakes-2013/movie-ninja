@@ -1,7 +1,7 @@
 MovieNinja::Application.routes.draw do
 
   root to: "users#index"
-  resources :users, only: [:index, :create]
+  resources :users, only: [:index, :create, :show]
   resources :sessions, only: [:create, :destroy]
   resources :surveys, only: [:index, :new]
 

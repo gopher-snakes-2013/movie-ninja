@@ -10,19 +10,15 @@
   <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 </head>
 
-<header>
-  <nav>
-    <%= render partial: "layouts/modal" %>
-  <nav>
-<header>
-
 <body>
-
+  <div class="navbar">
+    <%= render partial: "layouts/modal" %>
+  </div>
   <% if flash[:error] %>
-    <div class='error'><%= flash[:error] %></div>
+      <div class='error'><%= flash[:error] %></div>
   <% end %>
-
-  <%= yield %>
-
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>

@@ -10,3 +10,12 @@
   </div>
 </div>
 
+<div class = "movie-list">
+  <%= render @movies %>
+</div>
+
+<%= simple_form_for @survey do |f| %>
+  <%= f.input :info %>
+  <%= f.input :location_info %>
+  <%= f.button :submit %>
+<% end %>
