@@ -2,7 +2,7 @@ module SessionHelper
 
   def logout
     session.clear
-    @current_user = nil
+    @user = nil
   end
 
   def current_user
@@ -11,10 +11,6 @@ module SessionHelper
 
   def signed_in?
     session[:current_user_id] ? true : false
-  end
-
-  def destroy
-    logout
   end
 
   def enforce_login
