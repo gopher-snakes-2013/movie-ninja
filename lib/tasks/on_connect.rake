@@ -13,7 +13,7 @@ namespace :db do
       new_showtime = Showtime.new
       new_showtime.title = movie['title']
       new_showtime.tms_id = movie['tmsId']
-      # new_showtime.mpaa_rating = movie['ratings'][0]['code']
+      new_showtime.mpaa_rating = (movie['ratings'] ? movie['ratings'][0]['code'] : "n/a")
       new_showtime.release_year = movie['releaseYear']
       movie['showtimes'].each do |showtime|
         new_showtime.theater_name = showtime['theatre']['name']
