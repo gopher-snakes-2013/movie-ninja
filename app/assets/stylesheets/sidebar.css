@@ -1,0 +1,54 @@
+html {
+  background-color: #ecf0f1;
+}
+
+.pure-menu ul {
+  padding-top: 20px;
+  float: right;
+}
+
+.move-list {
+  float: left;
+}
+
+#sidebar {
+  color: white;
+  position: fixed;
+  height: 40em;
+  right: 0;
+  top: 5em;
+  width: 25%;
+  background-color: #34495e;
+  -webkit-box-shadow: 0px 0px 12px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 2px 12px rgba(23,69,88,0.5);
+  background: rgba(52, 73, 94, .7);
+}
+
+#sidebar-content {
+  display: table;
+  margin: 0 auto;
+  padding-left: 1em;
+  padding-top: 1em;
+  padding-right: 1em;
+}
+
+#survey-comment {
+  width: 100%;
+  height: 5em;
+  margin: 0 auto;
+  -webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
+  -moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
+  box-shadow: inset 2px 2px 2px 0px #dddddd;
+  margin-top: .5em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#submit-survey {
+  margin-top: .5em;
+}
+
+#picked-movies {
+  height: 27em;
+}
