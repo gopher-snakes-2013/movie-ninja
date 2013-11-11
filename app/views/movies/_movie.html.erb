@@ -4,6 +4,7 @@
   </div>
   <div class = "movie-box-title">
     <%= movie.title %>
+    <span class="select-movie"><i class="fa fa-check-square"></i></span>
   </div>
   <div class = "movie-box-critics-score collapsed">
     Tomato Score: <%= movie.rt_critics_score %>
@@ -11,5 +12,8 @@
   <div class = "movie-box-mpaa-rating collapsed">
     <%= movie.mpaa_rating %>
   </div>
-  <%= link_to "test link", action: 'preview_user', controller: 'users', remote: true %>
+  <div class="sidebar-movie-template hidden">
+    <img src=<%= movie.mob_poster_url %>>
+    <span><%= movie.title %></span>
+  </div>
 </div>

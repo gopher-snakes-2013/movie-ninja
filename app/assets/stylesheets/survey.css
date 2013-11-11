@@ -76,3 +76,15 @@
     display: block;
   }
 }
+
+.hidden {
+  display: none;
+}
+
+.fa-check-square{
+  opacity: .3;
+}
+
+.fa-check-square:hover{
+  opacity: 1;
+

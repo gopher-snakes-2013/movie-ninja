@@ -51,4 +51,19 @@ html {
 
 #picked-movies {
   height: 27em;
+  overflow-y: auto;
+}
+
+#picked-movies{
+  overflow-x:hidden;
+  overflow-y:scroll;
+}
+#picked-movies::-webkit-scrollbar {
+  width:5px;
+}
+#picked-movies::-webkit-scrollbar * {
+  background:transparent;
+}
+#picked-movies::-webkit-scrollbar-thumb {
+  background:#999 !important;
 }

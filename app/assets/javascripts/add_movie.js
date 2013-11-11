@@ -1,7 +1,9 @@
 $(document).ready(function(){
-  $('.movie-box-poster').click(function(){
+  $('.select-movie').click(function(){
     console.log('click registered')
-    var title = this.nextElementSibling.innerText
-    $('#picked-movies ul').append("<li>" + title + "</li>")
+    var sideBarTemplate = $(this).parent().parent().find('.sidebar-movie-template').clone().removeClass('hidden')
+    $('#picked-movies').append(sideBarTemplate)
+    $(this).find('i').fadeTo(1,1)
   })
 })
+
