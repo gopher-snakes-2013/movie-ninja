@@ -7,6 +7,7 @@ gem 'rottentomatoes'
 gem 'simple_form'
 gem 'bcrypt-ruby'
 gem 'httparty'
+gem 'fuzzily'
 
 group :development do
   gem 'better_errors'

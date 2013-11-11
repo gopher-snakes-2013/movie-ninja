@@ -1,7 +1,7 @@
 class CreateShowtimesTable < ActiveRecord::Migration
   def change
     create_table :showtimes do |t|
-      t.string :title
+      t.string :oc_title
       t.string :tms_id
       t.string :mpaa_rating
       t.integer :release_year
