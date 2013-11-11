@@ -33,7 +33,6 @@ namespace :db do
       })
     end
 
-
     in_theaters_movies = JSON(Rotten.get_url("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=" + Rotten.api_key + "&page_limit=50").body)["movies"].map { |movie| RottenMovie.new(movie, false) }
     in_theaters_movies += JSON(Rotten.get_url("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=" + Rotten.api_key + "&page_limit=50&page=2").body)["movies"].map { |movie| RottenMovie.new(movie, false) }
     in_theaters_movies += JSON(Rotten.get_url("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=" + Rotten.api_key + "&page_limit=50&page=3").body)["movies"].map { |movie| RottenMovie.new(movie, false) }
