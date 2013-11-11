@@ -16,9 +16,8 @@ html {
   border-top-left-radius:.5em;
   border-bottom-left-radius:.5em;
   position: fixed;
-  height: 40em;
+  height: 80%;
   right: 0;
-  top: 5em;
   width: 25%;
   background-color: #34495e;
   -webkit-box-shadow: 0px 0px 12px rgba(0,0,0,0.4);
@@ -32,11 +31,12 @@ html {
   padding-left: 1em;
   padding-top: 1em;
   padding-right: 1em;
+  height: 100%;
 }
 
 #survey-comment {
   width: 100%;
-  height: 5em;
+  height: 30%;
   margin: 0 auto;
   -webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
   -moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
@@ -52,7 +52,7 @@ html {
 }
 
 #picked-movies {
-  height: 27em;
+  height: 70%;
   overflow-y: auto;
 }
 
@@ -68,4 +68,9 @@ html {
 }
 #picked-movies::-webkit-scrollbar-thumb {
   background:#999 !important;
+}
+
+#toggle-sidebar-button {
+  font-size: 1.5em;
+  margin-right: 20px;
 }

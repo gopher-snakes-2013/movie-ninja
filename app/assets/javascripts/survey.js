@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    var moviePreviewVisible = false;
     $('.movie-box-poster').click(function(){
       var id = $(this).children(":first").data('id');
       $.ajax({
@@ -8,15 +9,24 @@ $(document).ready(function(){
       }).done(function(movie_preview_response){
         console.log(movie_preview_response)
         $('#movie-preview-container').html(movie_preview_response);
+        if(!moviePreviewVisible){
+          $('#movie-preview-container').toggle("slide", {direction: "left"});
+          moviePreviewVisible = true;
+          $('#sidebar').toggle("slide", {direction: "right"});
+        };
+
+
       });
-      $('#sidebar').toggle(function(){
-        $('#sidebar').animate({
-          top: '0'
-        }, 400);
-      }, function(){
-      $('#sidebar').animate({
-          top: '-4'+$(this).height()
-      }, 400);
     });
-  })
+
+    $('#toggle-sidebar-button').click(function(){
+      $('#sidebar').toggle("slide", {direction: "right"});
+      $('#movie-preview-container').toggle("slide", {direction: "left"});
+      if(moviePreviewVisible){
+         moviePreviewVisible = false;
+      }
+      else{
+        moviePreviewVisible = true;
+      };
+    });
 })
