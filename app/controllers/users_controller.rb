@@ -18,4 +18,8 @@ class UsersController < ApplicationController
       redirect_to root_path, flash: { error: @user.errors.full_messages.to_sentence }
     end
   end
+
+  def show
+
+  end
 end
