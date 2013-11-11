@@ -1,14 +1,18 @@
-<div class = "movie-box">
+<div class = "movie-box" data-id=<%=movie.id%>>
   <div class = "movie-box-poster">
     <%= link_to( image_tag(movie.det_poster_url), "#", data: { id: movie.id } ) %>
   </div>
   <div class = "movie-box-title">
     <%= movie.title %>
+    <span class="select-movie"><i class="fa fa-check-square"></i></span>
   </div>
   <div class = "movie-box-critics-score collapsed">
     Tomato Score: <%= movie.rt_critics_score %>
   </div>
   <div class = "movie-box-mpaa-rating collapsed">
     <%= movie.mpaa_rating %>
+  </div>
+  <div class="sidebar-movie-template hidden" data-id=<%=movie.id%>>
+    <i class="fa fa-times remove-movie"></i> <span><%= movie.title %></span>
   </div>
 </div>

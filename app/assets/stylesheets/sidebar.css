@@ -13,6 +13,8 @@ html {
 
 #sidebar {
   color: white;
+  border-top-left-radius:.5em;
+  border-bottom-left-radius:.5em;
   position: fixed;
   height: 40em;
   right: 0;
@@ -51,4 +53,19 @@ html {
 
 #picked-movies {
   height: 27em;
+  overflow-y: auto;
+}
+
+#picked-movies{
+  overflow-x:hidden;
+  overflow-y:scroll;
+}
+#picked-movies::-webkit-scrollbar {
+  width:5px;
+}
+#picked-movies::-webkit-scrollbar * {
+  background:transparent;
+}
+#picked-movies::-webkit-scrollbar-thumb {
+  background:#999 !important;
 }
