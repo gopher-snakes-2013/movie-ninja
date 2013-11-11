@@ -7,8 +7,9 @@ namespace :db do
     rescue LoadError
     end
     include RottenTomatoes
+
     Rotten.api_key = ENV['ROTTEN_API_KEY']
-    opening_movies = RottenList.find(type: 'opening', limit: 20)
+    opening_movies = RottenList.find(type: 'opening', limit: 50)
     opening_movies.each do |rt_movie_data|
       new_movie = Movie.find_or_create_by_rotten_id(rt_movie_data.id)
       imdb_id = ( rt_movie_data.alternate_ids ? rt_movie_data.alternate_ids.imdb : "" )
@@ -19,7 +20,7 @@ namespace :db do
       release_date = ( rt_movie_data.release_dates ? rt_movie_data.release_dates.theater : "" )
 
       new_movie.update_attributes({
-        title:              rt_movie_data.title.titleize,
+        title:              rt_movie_data.title,
         imdb_id:            imdb_id,
         mob_poster_url:     mob_poster_url,
         det_poster_url:     det_poster_url,
@@ -31,10 +32,12 @@ namespace :db do
         release_date:       release_date
       })
     end
+
     in_theaters_movies = JSON(Rotten.get_url("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=" + Rotten.api_key + "&page_limit=50").body)["movies"].map { |movie| RottenMovie.new(movie, false) }
     in_theaters_movies += JSON(Rotten.get_url("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=" + Rotten.api_key + "&page_limit=50&page=2").body)["movies"].map { |movie| RottenMovie.new(movie, false) }
     in_theaters_movies += JSON(Rotten.get_url("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=" + Rotten.api_key + "&page_limit=50&page=3").body)["movies"].map { |movie| RottenMovie.new(movie, false) }
     in_theaters_movies += JSON(Rotten.get_url("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=" + Rotten.api_key + "&page_limit=50&page=4").body)["movies"].map { |movie| RottenMovie.new(movie, false) }
+    in_theaters_movies += JSON(Rotten.get_url("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=" + Rotten.api_key + "&limit=50").body)["movies"].map { |movie| RottenMovie.new(movie, false) }
 
     # RottenMovie.new(Rotten.api_call("lists", {type: 'opening'})[0], false)
     in_theaters_movies.each do |rt_movie_data|
@@ -48,7 +51,7 @@ namespace :db do
       release_date = ( rt_movie_data.release_dates ? rt_movie_data.release_dates.theater : "" )
 
       new_movie.update_attributes({
-        title:              rt_movie_data.title.titleize,
+        title:              rt_movie_data.title,
         imdb_id:            imdb_id,
         mob_poster_url:     mob_poster_url,
         det_poster_url:     det_poster_url,
