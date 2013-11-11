@@ -31,6 +31,10 @@
   margin-bottom: 5px;
 }
 
+.selected {
+  background-color: red;
+}
+
 .collapsed {
   display: none;
 }
@@ -39,19 +43,6 @@ h3 {
   text-align: center;
   margin: 5px;
   font-size: 24px;
-}
-
-#movie-preview-container {
-  float: left;
-  margin: 10px;
-  margin: 1em;
-  padding-top: 0.5em;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: cyan;
-  width: 25%;
-  text-align: left;
-  margin-right: auto;
 }
 
 @media (max-width: 500px){

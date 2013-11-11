@@ -1,6 +1,7 @@
 $(document).ready(function(){
     var moviePreviewVisible = false;
-    $('.movie-box-poster').click(function(){
+    $('.movie-box-poster').click(function(event){
+      event.preventDefault();
       var id = $(this).children(":first").data('id');
       $.ajax({
         url: "/preview_movie",
@@ -14,12 +15,12 @@ $(document).ready(function(){
           moviePreviewVisible = true;
           $('#sidebar').toggle("slide", {direction: "right"});
         };
-
-
       });
     });
 
-    $('#toggle-sidebar-button').click(function(){
+    // $(".movie-box[data-id=" + id + "]").toggleClass('selected');
+    $('#toggle-sidebar-button').click(function(event){
+      event.preventDefault();
       $('#sidebar').toggle("slide", {direction: "right"});
       $('#movie-preview-container').toggle("slide", {direction: "left"});
       if(moviePreviewVisible){

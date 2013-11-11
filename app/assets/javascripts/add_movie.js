@@ -5,6 +5,7 @@ $(document).ready(function(){
 
     $currentMovieBox = $(this).parents('.movie-box')
 
+    // if clicked movie is already in pickedMovies
     if (pickedMovies.indexOf($currentMovieBox.data('id')) === -1) {
 
       var sideBarTemplate = $currentMovieBox.find('.sidebar-movie-template').clone().removeClass('hidden')

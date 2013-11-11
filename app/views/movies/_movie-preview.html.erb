@@ -1,2 +1,18 @@
-
+<h3 class="movie-preview-title">
   <%= @movie.title %>
+</h3>
+
+<ul class="movie-preview-scores">
+  <li><%= @movie.rt_critics_score %></li>
+  <li><%= @movie.rt_audience_score %></li>
+</ul>
+<p class="movie-preview-mpaa-rating">
+  <%= @movie.mpaa_rating %>
+</p>
+
+<p class="movie-preview-runtime">
+  <%= @movie.runtime %>
+</p>
+<p class="movie-preview-synopsis">
+  <%= @movie.synopsis  %>
+</p>
