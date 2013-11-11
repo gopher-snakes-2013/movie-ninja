@@ -76,3 +76,15 @@
     display: block;
   }
 }
+
+.hidden {
+  display: none;
+}
+
+.select-movie{
+  opacity: .3;
+}
+
+.select-movie:hover{
+  opacity: 1;
+
