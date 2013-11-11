@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   $('.select-movie').click(function(){
 
-    $currentMovieBox = $(this).parent().parent()
+    $currentMovieBox = $(this).parents('.movie-box')
 
     if (pickedMovies.indexOf($currentMovieBox.data('id')) === -1) {
 
@@ -23,4 +23,3 @@ $(document).ready(function(){
     $(this).parent().remove()
   })
 })
-
