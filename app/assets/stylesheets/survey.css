@@ -81,10 +81,10 @@
   display: none;
 }
 
-.fa-check-square{
+.select-movie{
   opacity: .3;
 }
 
-.fa-check-square:hover{
+.select-movie:hover{
   opacity: 1;
 

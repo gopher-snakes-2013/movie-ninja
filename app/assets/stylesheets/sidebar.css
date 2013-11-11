@@ -13,6 +13,8 @@ html {
 
 #sidebar {
   color: white;
+  border-top-left-radius:1em;
+  border-bottom-left-radius:1em;
   position: fixed;
   height: 40em;
   right: 0;

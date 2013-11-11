@@ -1,4 +1,4 @@
-<div class = "movie-box">
+<div class = "movie-box" data-id=<%=movie.id%>>
   <div class = "movie-box-poster">
     <%= image_tag(movie.det_poster_url) %>
   </div>
@@ -12,8 +12,7 @@
   <div class = "movie-box-mpaa-rating collapsed">
     <%= movie.mpaa_rating %>
   </div>
-  <div class="sidebar-movie-template hidden">
-    <img src=<%= movie.mob_poster_url %>>
-    <span><%= movie.title %></span>
+  <div class="sidebar-movie-template hidden" data-id=<%=movie.id%>>
+    <i class="fa fa-times remove-movie"></i> <span><%= movie.title %></span>
   </div>
 </div>
