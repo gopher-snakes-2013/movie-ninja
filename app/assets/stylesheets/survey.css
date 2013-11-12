@@ -86,9 +86,10 @@ h3 {
 }
 
 .enqueue-movie-button{
-  opacity: .3;
+  opacity: .4;
+  color: black;
 }
 
 .enqueue-movie-button:hover{
   opacity: 1;
-
+}

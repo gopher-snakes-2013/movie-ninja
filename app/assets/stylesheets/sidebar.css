@@ -52,6 +52,10 @@
   overflow-y: auto;
 }
 
+.remove-movie {
+  color: white;
+}
+
 #selected-movies{
   overflow-x:hidden;
   overflow-y:scroll;
