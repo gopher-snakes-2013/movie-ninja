@@ -15,7 +15,6 @@ $(document).ready(function(){
       pickedMovies.push($currentMovieBox.data('id'))
     }
 
-    $("form#new-survey input[type=hidden]").val( pickedMovies )
   })
 
   $('#picked-movies').on('click', 'i', function(){
