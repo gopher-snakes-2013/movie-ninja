@@ -7,9 +7,7 @@ class Survey < ActiveRecord::Base
 
   before_save :generate_survey_url
 
-  # TODO: look into friendly_id gem  https://github.com/norman/friendly_id
   def generate_survey_url
     self.url = SecureRandom.urlsafe_base64
-    # self.url = id.hash.abs.to_s(36)
   end
 end

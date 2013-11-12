@@ -14,7 +14,6 @@ $(document).ready(function(){
 
       pickedMovies.push($currentMovieBox.data('id'))
     }
-
   })
 
   $('#picked-movies').on('click', 'i', function(){
@@ -24,6 +23,6 @@ $(document).ready(function(){
     $(this).parent().remove()
 
    })
-})
+});
 
 

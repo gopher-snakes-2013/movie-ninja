@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by_email(params[:user][:email])
-    p params
     if @user && @user.authenticate(params[:user][:password])
       session[:current_user_id] = @user.id
       redirect_to new_survey_path
