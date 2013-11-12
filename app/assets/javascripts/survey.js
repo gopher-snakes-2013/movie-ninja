@@ -10,7 +10,6 @@ var Survey = {
     });
    $('.enqueue-movie-button').click(function(event){
       event.preventDefault();
-      console.log(this);
       Survey.addMovieToSurvey($(this).data('id'));
    });
    $('#selected-movies').on('click', 'i', function(event){
@@ -25,7 +24,6 @@ var Survey = {
       type: "get",
       data: { 'movie_id': movieId }
     }).done(function(movie_preview_response){
-      console.log(movie_preview_response)
       $('#movie-preview-container').html(movie_preview_response);
       if(!moviePreviewVisible){
         $('#movie-preview-container').toggle("slide", {direction: "left"});
