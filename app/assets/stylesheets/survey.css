@@ -6,7 +6,7 @@
   margin-top: 1em;
   margin-right: 5px;
   padding-top: 0.5em;
-  background-color: #DFDFDF;
+  background-color: #9ca98c;
   border-radius: 10px;
 }
 
@@ -14,7 +14,7 @@
   width: 20%;
   display: inline-table;
   margin: 5px;
-  background-color: gray;
+  background-color: #dfded4;
   border-radius: 5px;
   padding: 0.75em;
   -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
@@ -85,10 +85,10 @@ h3 {
   display: none;
 }
 
-.select-movie{
+.enqueue-movie-button{
   opacity: .3;
 }
 
-.select-movie:hover{
+.enqueue-movie-button:hover{
   opacity: 1;
 

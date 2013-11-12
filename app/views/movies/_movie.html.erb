@@ -4,7 +4,7 @@
   </div>
   <div class = "movie-box-title">
     <%= movie.title %>
-    <span class="select-movie"><i class="fa fa-check-square"></i></span>
+    <a href="#"><span class="enqueue-movie-button" data-id=<%=movie.id%>><i class="fa fa-thumbs-o-up"></i></span></a>
   </div>
   <div class = "movie-box-critics-score collapsed">
     Tomato Score: <%= movie.rt_critics_score %>
