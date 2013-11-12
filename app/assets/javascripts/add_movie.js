@@ -21,5 +21,8 @@ $(document).ready(function(){
     pickedMovies.splice(pickedMovies.indexOf(movieId), 1)
     $($('[data-id =' + movieId + ']')[0]).find('.select-movie').fadeTo(1,.3)
     $(this).parent().remove()
-  })
-})
+
+   })
+});
+
+

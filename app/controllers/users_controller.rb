@@ -4,6 +4,9 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user || User.new
+    if current_user
+      redirect_to new_survey_path
+    end
   end
 
   def create
@@ -16,13 +19,6 @@ class UsersController < ApplicationController
       redirect_to new_survey_path
     else
       redirect_to root_path, flash: { error: @user.errors.full_messages.to_sentence }
-    end
-  end
-
-  def preview_user
-    @user = current_user
-    respond_to do |format|
-      format.js { render :layout => false }
     end
   end
 
