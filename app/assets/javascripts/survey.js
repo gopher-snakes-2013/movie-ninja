@@ -3,7 +3,7 @@ var Survey = {
    $('.movie-box-poster').click(Movie.previewMovie);
    $('#toggle-sidebar-button').click(Survey.toggleSideBar);
    $('.enqueue-movie-button').click(Survey.addOrRemoveMovieFromSurvey);
-   $('#selected-movies').on('click', 'i', Survey.removeMovieFromSurvey);
+   $('#selected-movies').on('click', 'i', Survey.addOrRemoveMovieFromSurvey);
    $("form#new_survey").on("submit", Survey.submitSurvey);
   },
 
@@ -12,6 +12,9 @@ var Survey = {
     var movieId = $(this).data('id');
     if(selectedMovies.indexOf(movieId) === -1) {
       Survey.addMovieToSurvey(movieId);
+      if(moviePreviewVisible){
+        Survey.toggleSideBar(event);
+      };
     }
     else{
       Survey.removeMovieFromSurvey(movieId);
@@ -39,9 +42,7 @@ var Survey = {
     };
   },
 
-  removeMovieFromSurvey: function(event){
-    event.preventDefault();
-    var movieId = $(this).data('id');
+  removeMovieFromSurvey: function(movieId){
     selectedMovies.splice(selectedMovies.indexOf(movieId), 1);
     $('[data-id='+movieId+']').find('.enqueue-movie-button').fadeTo(1,.4);
     $('#selected-movies').find('[data-id=' + movieId + ']').parent().parent().remove();
