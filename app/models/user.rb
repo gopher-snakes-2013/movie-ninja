@@ -12,4 +12,9 @@ class User < ActiveRecord::Base
 
   has_secure_password
   validates :password, length: { minimum: 6 }
+
+  def is_creator_of?(object)
+    return true if object.respond_to? :user_id && object.user_id == self.id
+    false
+  end
 end

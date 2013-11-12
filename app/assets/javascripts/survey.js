@@ -1,45 +1,25 @@
 var Survey = {
   bindEventListeners: function(){
-   $('.movie-box-poster').click(function(event){
-      event.preventDefault();
-      Survey.previewMovie($(this).children(":first").data('id'));
-    });
-   $('#toggle-sidebar-button').click(function(event){
-      event.preventDefault();
-      Survey.toggleSideBar();
-    });
-   $('.enqueue-movie-button').click(function(event){
-      event.preventDefault();
-      var movieId = $(this).data('id');
-      if(selectedMovies.indexOf(movieId) === -1) {
-        Survey.addMovieToSurvey(movieId);
-      }
-      else{
-        Survey.removeMovieFromSurvey(movieId);
-      };
-   });
-   $('#selected-movies').on('click', 'i', function(event){
-      event.preventDefault();
-      Survey.removeMovieFromSurvey($(this).data('id'));
-   });
+   $('.movie-box-poster').click(Movie.previewMovie);
+   $('#toggle-sidebar-button').click(Survey.toggleSideBar);
+   $('.enqueue-movie-button').click(Survey.addOrRemoveMovieFromSurvey);
+   $('#selected-movies').on('click', 'i', Survey.removeMovieFromSurvey);
+   $("form#new_survey").on("submit", Survey.submitSurvey);
   },
 
-  previewMovie: function(movieId){
-    $.ajax({
-      url: "/preview_movie",
-      type: "get",
-      data: { 'movie_id': movieId }
-    }).done(function(movie_preview_response){
-      $('#movie-preview-container').html(movie_preview_response);
-      if(!moviePreviewVisible){
-        $('#movie-preview-container').toggle("slide", {direction: "left"});
-        moviePreviewVisible = true;
-        $('#sidebar').toggle("slide", {direction: "right"});
-      };
-    });
+  addOrRemoveMovieFromSurvey: function(event) {
+    event.preventDefault();
+    var movieId = $(this).data('id');
+    if(selectedMovies.indexOf(movieId) === -1) {
+      Survey.addMovieToSurvey(movieId);
+    }
+    else{
+      Survey.removeMovieFromSurvey(movieId);
+    };
   },
 
-  toggleSideBar: function(){
+  toggleSideBar: function(event){
+    event.preventDefault();
     $('#sidebar').toggle("slide", {direction: "right"});
     $('#movie-preview-container').toggle("slide", {direction: "left"});
     if(moviePreviewVisible){
@@ -59,15 +39,49 @@ var Survey = {
     };
   },
 
-  removeMovieFromSurvey: function(movieId){
+  removeMovieFromSurvey: function(event){
+    event.preventDefault();
+    var movieId = $(this).data('id');
     selectedMovies.splice(selectedMovies.indexOf(movieId), 1);
     $('[data-id='+movieId+']').find('.enqueue-movie-button').fadeTo(1,.4);
     $('#selected-movies').find('[data-id=' + movieId + ']').parent().parent().remove();
+  },
+
+  submitSurvey: function(event){
+    event.preventDefault();
+    var $form = $(this);
+    for (var i in selectedMovies) {
+      console.log(selectedMovies[i])
+      $form.append("<input type='hidden' name='survey[movie_ids][]' value=" + selectedMovies[i] +" />")
+    };
+    $form.off("submit");
+    $form.submit();
+  }
+};
+
+var Movie = {
+  previewMovie: function(event){
+    event.preventDefault();
+    var movieId = $(this).children(":first").data('id')
+    $.ajax({
+      url: "/preview_movie",
+      type: "get",
+      data: { 'movie_id': movieId }
+    }).done(Movie.renderPreviewedMovie);
+  },
+
+  renderPreviewedMovie: function(movie_preview_response){
+    $('#movie-preview-container').html(movie_preview_response);
+    if(!moviePreviewVisible){
+      $('#movie-preview-container').toggle("slide", {direction: "left"});
+      moviePreviewVisible = true;
+      $('#sidebar').toggle("slide", {direction: "right"});
+    };
   }
 };
 
 $(document).ready(function(){
-  moviePreviewVisible = false;
   selectedMovies = [];
+  moviePreviewVisible = false;
   Survey.bindEventListeners();
 })

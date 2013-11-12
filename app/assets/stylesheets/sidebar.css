@@ -22,7 +22,6 @@
   display: table;
   margin: 0 auto;
   padding-left: 1em;
-  padding-top: 1em;
   padding-right: 1em;
   height: 100%;
 }
@@ -45,18 +44,16 @@
 }
 
 #selected-movies {
-  height: 70%;
+  height: 73%;
   overflow-y: auto;
+  overflow-x:hidden;
+  overflow-y:scroll;
 }
 
 .remove-movie {
   color: #f9a646;
 }
 
-#selected-movies{
-  overflow-x:hidden;
-  overflow-y:scroll;
-}
 #selected-movies::-webkit-scrollbar {
   width:5px;
 }
