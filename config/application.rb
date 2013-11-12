@@ -17,6 +17,10 @@ end
 
 module MovieNinja
   class Application < Rails::Application
+    # While precompiling assets, in Rails 3.x, you can prevent
+    # initializing your application and connecting to the database by
+    # ensuring that the following line is in your config/application.rb:
+    config.assets.initialize_on_precompile = false
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
