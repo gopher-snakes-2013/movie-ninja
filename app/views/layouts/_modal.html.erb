@@ -2,6 +2,7 @@
   <a class="pure-menu-heading">Movie Ninja</a>
   <ul>
     <% if signed_in? %>
+      <li><a href="#"><i class="fa fa-bars" id="toggle-sidebar-button"></i></a></li>
       <li><%= button_to "logout", session_path(current_user), class: 'pure-button', method: :delete %></li>
     <% else %>
       <li><button class="pure-button" data-toggle="modal" href="#myModal">Login</button></li>

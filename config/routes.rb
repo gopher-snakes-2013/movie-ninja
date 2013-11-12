@@ -6,4 +6,6 @@ MovieNinja::Application.routes.draw do
   resources :surveys, only: [:new, :create]
 
   get 'surveys/:survey_url', to: 'surveys#show', as: :survey
+
+  get 'preview_movie', to: 'movies#show'
 end
