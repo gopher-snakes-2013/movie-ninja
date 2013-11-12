@@ -5,12 +5,16 @@
 <div id="sidebar">
   <div id="sidebar-content">
     My Survey
-    <div id="picked-movies">
-    </div>
-    <form action="/surveys" method="post">
+    <%= form_for @survey do |f| %>
+
+      <div id="picked-movies">
+      <!-- javascript will populate this form with hidden input types for each movie id -->
+      </div>
       <input type="date" id="datepicker">
-      <textarea id="survey-comment" placeholder="Anything else you want your firends to know..."></textarea>
+      <textarea id="survey-comment" name="survey[info]" placeholder="Anything else you want your friends to know..."></textarea>
       <input type="submit" class="pure-button pure-button-small" id='submit-survey'>
-    </form>
+    <% end %>
   </div>
 </div>
+
+
