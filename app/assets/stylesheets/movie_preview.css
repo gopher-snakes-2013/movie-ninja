@@ -1,7 +1,8 @@
 #movie-preview-container {
   float: left;
   margin: 1em;
-  margin-left: 0;
+  margin-left: 1em;
+  margin-right: auto;
   padding: 10px;
   padding-top: 0.5em;
   border-radius: 10px;
@@ -9,9 +10,9 @@
   height: 75%;
   width: 25%;
   text-align: left;
-  margin-right: auto;
-  right: 2em;
+  right: 1em;
   position: fixed;
+  z-index: -10;
 }
 
 .movie-preview-synopsis {

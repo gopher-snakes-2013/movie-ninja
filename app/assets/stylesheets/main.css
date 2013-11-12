@@ -12,6 +12,7 @@ body {
   margin-bottom: 3em;
   border-radius: 10px;
   background-color: red;
+  position: relative;
 }
 
 .error {

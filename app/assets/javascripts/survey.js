@@ -54,20 +54,20 @@ var Survey = {
     if(selectedMovies.indexOf(movieId) === -1) {
       var title = $(".movie-box[data-id=" + movieId + "] > .movie-box-title").text();
       $('#selected-movies').append("<div><a href='#'><i class='fa fa-times remove-movie' data-id=" + movieId + "></a></i>" + title + "</div>");
-      $('[data-id='+movieId+']').find('.enqueue-movie-button').fadeTo(1,1)
+      $('[data-id='+movieId+']').find('.enqueue-movie-button').fadeTo(1,1);
       selectedMovies.push(movieId);
     };
   },
 
   removeMovieFromSurvey: function(movieId){
     selectedMovies.splice(selectedMovies.indexOf(movieId), 1);
-    $('[data-id='+movieId+']').find('.enqueue-movie-button').fadeTo(1,.4)
+    $('[data-id='+movieId+']').find('.enqueue-movie-button').fadeTo(1,.4);
     $('#selected-movies').find('[data-id=' + movieId + ']').parent().parent().remove();
   }
 };
 
 $(document).ready(function(){
   moviePreviewVisible = false;
-  selectedMovies = []
+  selectedMovies = [];
   Survey.bindEventListeners();
 })
