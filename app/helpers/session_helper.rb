@@ -19,5 +19,4 @@ module SessionHelper
       flash[:error] = "You must be logged in to access that page."
     end
   end
-
 end

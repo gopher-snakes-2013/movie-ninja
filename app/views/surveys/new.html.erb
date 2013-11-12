@@ -1,11 +1,14 @@
-<div class = "movie-list">
+<div class="movie-list">
+  <h3>Select movies to add to your survey</h3>
   <%= render @movies %>
 </div>
+
+<div id="movie-preview-container" class="hidden"></div>
 
 <div id="sidebar">
   <div id="sidebar-content">
     My Survey
-    <div id="picked-movies">
+    <div id="selected-movies">
     </div>
     <form action="/surveys" method="post">
       <input type="date" id="datepicker">

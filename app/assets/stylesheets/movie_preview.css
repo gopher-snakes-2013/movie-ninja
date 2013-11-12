@@ -1,0 +1,36 @@
+#movie-preview-container {
+  float: left;
+  margin: 1em;
+  margin-left: 1em;
+  margin-right: auto;
+  padding: 10px;
+  padding-top: 0.5em;
+  border-radius: 10px;
+  background-color: #B1C1C4;
+  height: 75%;
+  width: 25%;
+  text-align: left;
+  right: 1em;
+  position: fixed;
+  z-index: -10;
+}
+
+.movie-preview-synopsis {
+  height: 70%;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.movie-preview-synopsis{
+  overflow-x:hidden;
+  overflow-y:scroll;
+}
+.movie-preview-synopsis::-webkit-scrollbar {
+  width:5px;
+}
+.movie-preview-synopsis::-webkit-scrollbar * {
+  background:transparent;
+}
+.movie-preview-synopsis::-webkit-scrollbar-thumb {
+  background:#999 !important;
+}

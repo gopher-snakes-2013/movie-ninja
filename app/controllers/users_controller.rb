@@ -19,11 +19,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def preview_user
-    @user = current_user
-    respond_to do |format|
-      format.js { render :layout => false }
-    end
-  end
+  def show
 
+  end
 end

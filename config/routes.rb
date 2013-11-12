@@ -4,8 +4,9 @@ MovieNinja::Application.routes.draw do
   resources :users, only: [:index, :create, :show]
   resources :sessions, only: [:create, :destroy]
   resources :surveys, only: [:index, :new]
+  resources :movies, only: [:show]
 
   get ':surveys/:survey_url', to: 'surveys#show', as: :survey
 
-  match 'preview_user' => 'users#preview_user'
+  get 'preview_movie', to: 'movies#show'
 end
