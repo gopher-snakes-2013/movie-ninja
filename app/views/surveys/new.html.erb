@@ -1,15 +1,18 @@
-<div class = "movie-list">
+<div class="movie-list">
+  <h3>Select movies to add to your survey</h3>
   <%= render @movies %>
 </div>
 
+<div id="movie-preview-container" class="hidden"></div>
+
 <div id="sidebar">
   <div id="sidebar-content">
-    My Survey
+    <p>My Survey</p>
+    <div id="selected-movies">
+    </div>
     <%= form_for @survey do |f| %>
-      <div id="picked-movies">
-      </div>
       <input type="date" name="survey[first_available_datetime]" id="datepicker">
-      <textarea id="survey-comment" name="survey[info]" placeholder="Anything else you want your friends to know..."></textarea>
+      <textarea id="survey-comment" name="survey[info]" placeholder="Anything else you want your firends to know..."></textarea>
       <input type="submit" class="pure-button pure-button-small" id='submit-survey'>
     <% end %>
   </div>

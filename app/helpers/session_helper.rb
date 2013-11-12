@@ -23,5 +23,4 @@ module SessionHelper
   def session_url
     @survey_path = session[:survey_url]
   end
-
 end
