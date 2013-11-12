@@ -5,7 +5,7 @@ class Movie < ActiveRecord::Base
 
   fuzzily_searchable :title
 
-  has_many :survey_movies
   has_many :showtimes
+  has_many :survey_movies
   has_many :surveys, through: :survey_movies
 end

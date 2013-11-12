@@ -12,4 +12,10 @@
   <div class = "movie-box-mpaa-rating collapsed">
     <%= movie.mpaa_rating %>
   </div>
+
+  <div class="sidebar-movie-template hidden" data-id=<%=movie.id%>>
+    <i class="fa fa-times remove-movie"></i> <span><%= movie.title %></span>
+    <input type="hidden" name="survey[movie_ids][]" value=<%= movie.id %> />
+  </div>
+
 </div>
