@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "1.9.3"
 
 gem 'rails', '3.2.14'
 gem 'pg'
@@ -8,6 +9,7 @@ gem 'simple_form'
 gem 'bcrypt-ruby'
 gem 'httparty'
 gem 'fuzzily'
+
 
 group :development do
   gem 'better_errors'
@@ -22,7 +24,6 @@ group :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'database_cleaner'
-
 end
 
 group :development, :test do
