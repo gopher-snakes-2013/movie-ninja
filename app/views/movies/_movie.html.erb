@@ -1,10 +1,14 @@
 <div class = "movie-box" data-id=<%=movie.id%>>
   <div class = "movie-box-poster">
     <%= link_to( image_tag(movie.det_poster_url), "#", data: { id: movie.id } ) %>
-  </div>
-  <div class = "movie-box-title">
-    <%= movie.title %>
-    <a href="#"><span class="enqueue-movie-button" data-id=<%=movie.id%>><i class="fa fa-thumbs-o-up"></i></span></a>
+    <div class = "overlay">
+        <div class = "movie-box-title">
+          <%= movie.title %>
+        </div>
+         <div class = "thumbs">
+          <a href="#"><span class="enqueue-movie-button" data-id=<%=movie.id%>><i class="fa fa-thumbs-o-up"></i></span></a>
+        </div>
+    </div>
   </div>
   <div class = "movie-box-critics-score collapsed">
     Tomato Score: <%= movie.rt_critics_score %>
