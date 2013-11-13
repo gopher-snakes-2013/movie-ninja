@@ -13,7 +13,7 @@
   z-index: -5;
 }
 
-.movie-box {
+.movie-box, .movie-box-votes {
   width: 20%;
   display: inline-table;
   margin: 5px;

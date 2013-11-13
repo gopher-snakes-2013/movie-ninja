@@ -1,0 +1,8 @@
+<div class = "movie-box" data-id=<%=movie.id%>>
+  <div class = "movie-box-poster">
+    <%= link_to( image_tag(movie.det_poster_url), "#", data: { id: movie.id } ) %>
+  </div>
+  <div class = "movie-box-title">
+    <%= movie.title %>
+  </div>
+</div>

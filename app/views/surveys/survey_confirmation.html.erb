@@ -8,5 +8,5 @@
   <%= link_to survey_url(@survey.url) %>
 </div>
 <div class = "movie-list-confirmation">
-  <%= render partial: :movie, collection: @movie_list, as: :movie %>
+  <%= render partial: 'movies/movie-votes', collection: @movie_list, as: :movie %>
 </div>
