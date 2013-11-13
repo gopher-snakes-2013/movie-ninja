@@ -1,6 +1,5 @@
-
 <div class = "movie-list">
-  <%= render partial: 'surveys/survey_movie', collection: @movie_list, as: :movie %>
+  <%= render partial: "surveys/survey_movie", collection: @movie_list, as: :movie %>
 </div>
 
 
@@ -12,6 +11,6 @@
         <input type="hidden" name="survey_id" value=<%= @survey.id %> >
       <% end %>
     </ul>
-    <input type="textfield" name="voter_name" placeholder="Your Name">
-    <input type='submit' value='Vote'>
+    <input type="textfield" id="voter_name_field" name="voter_name" placeholder="Your Name" required>
+    <input type="submit" value="Vote">
 </form>

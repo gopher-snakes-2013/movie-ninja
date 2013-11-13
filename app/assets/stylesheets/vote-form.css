@@ -1,30 +1,29 @@
-form#vote-form {
+#vote-form {
   background: #9cbc2c;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   padding: 10px;
-  width: 30%;
+  width: 25%;
   right: 0;
-  position: absolute;
+  position: fixed;
   margin-bottom: 5px
 }
 
-form#vote-form ul {
+#vote-form ul {
+  border: none;
+  margin-bottom: 15px;
+  list-style: none;
+  padding-left: 1em;
+}
+
+#vote-form ul li {
   border: none;
   margin-bottom: 15px;
   list-style: none;
 }
 
-form#vote-form ul li {
-  border: none;
-  margin-bottom: 15px;
-  list-style: none;
-}
-
-
-
-form#vote-form legend {
+#vote-form legend {
   color: black;
   font-size: 16px;
   font-weight: bold;
@@ -32,3 +31,6 @@ form#vote-form legend {
   text-shadow: 0 1px 1px #c0d576;
 }
 
+#voter_name_field {
+  width: 70%;
+}
