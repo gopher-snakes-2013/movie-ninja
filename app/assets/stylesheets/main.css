@@ -51,3 +51,12 @@ body {
   border-radius: 5px;
   background-color: rgb(242, 222, 222);
 }
+
+.pure-menu ul {
+  float: right;
+}
+
+.pure-menu-heading {
+  font-size: 24px;
+  margin-top: 1em;
+}

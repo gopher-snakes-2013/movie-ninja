@@ -1,5 +1,5 @@
 <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-  <a class="pure-menu-heading">Movie Ninja</a>
+  <%= link_to "Movie Ninja", root_path, class: "pure-menu-heading" %>
   <ul>
     <% if signed_in? %>
       <li><a href="#"><i class="fa fa-bars" id="toggle-sidebar-button"></i></a></li>

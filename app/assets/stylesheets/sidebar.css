@@ -1,14 +1,9 @@
-.pure-menu ul {
-  padding-top: 20px;
-  float: right;
-}
-
 #sidebar {
   color: white;
   border-top-left-radius:.5em;
   border-bottom-left-radius:.5em;
   position: fixed;
-  height: 80%;
+  height: 85%;
   margin-top: 1em;
   right: 0;
   width: 28%;
@@ -44,7 +39,7 @@
 }
 
 #selected-movies {
-  height: 73%;
+  height: 65%;
   overflow-y: auto;
   overflow-x:hidden;
   overflow-y:scroll;
