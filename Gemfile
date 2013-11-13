@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "1.9.3"
 
 gem 'rails', '3.2.14'
 gem 'pg'
@@ -22,7 +23,6 @@ group :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'database_cleaner'
-
 end
 
 group :development, :test do
