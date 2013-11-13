@@ -49,41 +49,6 @@ h3.movie-survey-header {
   font-size: 24px;
 }
 
-.movie-preview-title {
-  text-align: center;
-  padding: 5px;
-  margin-bottom: 5px;
-  font-size: 120%;
-}
-
-ul.movie-preview-info {
-  margin-top: 5px;
-  margin-bottom: 0;
-  padding-left: 0;
-  text-align: center;
-}
-
-.movie-preview-info li {
-  list-style-type: none;
-  display: -moz-inline-box;
-  display: inline-block;
-  margin-top: 5px;
-  padding: 5px 20px;
-}
-
-ul.movie-preview-scores {
-  margin-top: 10px;
-  padding-left: 20px;
-}
-
-.movie-preview-scores li {
-  list-style-type: none;
-  display: -moz-inline-box;
-  display: inline-block;
-  margin-top: 5px;
-  padding: 0 10px;
-}
-
 @media (max-width: 550px){
   .movie-list {
     max-width: 450px;

@@ -3,7 +3,7 @@
   margin: 1em;
   margin-left: 1em;
   margin-right: auto;
-  padding: 10px;
+  padding: 15px;
   padding-top: 0.5em;
   border-radius: 10px;
   background-color: #B1C1C4;
@@ -15,16 +15,47 @@
   z-index: -10;
 }
 
-.movie-preview-synopsis {
-  height: 70%;
-  overflow-y: auto;
-  font-size: 14px;
+.movie-preview-title {
+  padding: 5px 0;
+  margin-bottom: 0;
+  font-size: 150%;
 }
 
-.movie-preview-synopsis{
+ul.movie-preview-info {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.movie-preview-info li {
+  list-style-type: none;
+  display: -moz-inline-box;
+  display: inline-block;
+  margin-top: 0;
+  padding: 5px 30px 0 0;
+}
+
+ul.movie-preview-scores {
+  margin-top: 3px;
+  padding-left: 0;
+}
+
+.movie-preview-scores li {
+  list-style-type: none;
+  display: -moz-inline-box;
+  display: inline-block;
+  margin-top: 0;
+  padding: 5px 30px 5px 0;
+}
+
+.movie-preview-synopsis {
+  max-height: 65%;
+  overflow-y: auto;
+  font-size: 14px;
   overflow-x:hidden;
   overflow-y:scroll;
 }
+
 .movie-preview-synopsis::-webkit-scrollbar {
   width:5px;
 }
@@ -33,8 +64,4 @@
 }
 .movie-preview-synopsis::-webkit-scrollbar-thumb {
   background:#999 !important;
-}
-
-.movie-preview-scores {
-
 }
