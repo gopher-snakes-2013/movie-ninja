@@ -13,7 +13,7 @@
   z-index: -5;
 }
 
-.movie-box {
+.movie-box, .movie-box-votes {
   width: 20%;
   display: inline-table;
   margin: 5px;
@@ -42,7 +42,7 @@
   display: none;
 }
 
-h3 {
+h3.movie-survey-header {
   text-align: center;
   margin: 5px;
   font-size: 24px;
