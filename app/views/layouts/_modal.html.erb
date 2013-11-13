@@ -5,7 +5,7 @@
       <% if request.fullpath == new_survey_path %>
         <li><a href="#"><i class="fa fa-bars" id="toggle-sidebar-button"></i></a></li>
       <% end %>
-      <li><%= button_to "logout", session_path(current_user), class: 'pure-button', method: :delete %></li>
+      <li><%= button_to "logout", sessions_path, class: 'pure-button', method: :delete %></li>
     <% else %>
       <li><button class="pure-button" data-toggle="modal" href="#myModal">Login</button></li>
     <% end %>

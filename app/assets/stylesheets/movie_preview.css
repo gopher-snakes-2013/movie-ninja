@@ -54,8 +54,7 @@ ul.movie-preview-scores {
   max-height: 65%;
   overflow-y: auto;
   font-size: 14px;
-  overflow-x:hidden;
-  overflow-y:scroll;
+  overflow-x: hidden;
   margin: 10px 0;
 }
 
