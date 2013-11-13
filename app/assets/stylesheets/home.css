@@ -1,0 +1,10 @@
+.banner {
+/*  background: transparent url('theatre_banner.jpg');*/
+  background-color: red;
+  text-align: center;
+  background-size: cover;
+  height: 350px;
+  width: 100%;
+  margin-bottom: 3em;
+}
+
