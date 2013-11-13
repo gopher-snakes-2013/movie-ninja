@@ -18,7 +18,7 @@
 .movie-preview-title {
   padding: 0;
   margin-top: .5em;
-  margin-bottom: 0;
+  margin-bottom: .25em;
   font-size: 150%;
 }
 
@@ -33,11 +33,12 @@ ul.movie-preview-info {
   display: -moz-inline-box;
   display: inline-block;
   margin-top: 0;
-  padding: 5px 30px 0 0;
+  padding: 0 30px 0 0;
 }
 
 ul.movie-preview-scores {
-  margin-top: 3px;
+  margin-top: 0;
+  margin-bottom: 0;
   padding-left: 0;
 }
 
@@ -55,6 +56,7 @@ ul.movie-preview-scores {
   font-size: 14px;
   overflow-x:hidden;
   overflow-y:scroll;
+  margin: 10px 0;
 }
 
 .movie-preview-synopsis::-webkit-scrollbar {
