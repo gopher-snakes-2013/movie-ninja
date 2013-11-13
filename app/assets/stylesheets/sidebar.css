@@ -66,5 +66,8 @@
 
 #toggle-sidebar-button {
   font-size: 1.5em;
-  margin-right: 20px;
+}
+
+#toggle-sidebar-link:hover {
+  background-color:#ffffff;
 }

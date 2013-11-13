@@ -12,9 +12,9 @@
 </head>
 
 <body>
-  <div class="navbar">
-    <%= render partial: "layouts/modal" %>
-  </div>
+   <nav>
+     <%= render partial: "layouts/modal" %>
+   </nav>
   <% if flash[:error] %>
       <div class='error'><%= flash[:error] %></div>
   <% end %>
