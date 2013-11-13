@@ -1,5 +1,8 @@
 class VotesController < ApplicationController
+
   def create
+    @user = User.new
+
     @vote = Vote.new
     @survey_movie = SurveyMovie.where(survey_id: params[:survey_id], movie_id: params[:movie_id_voted_on]).first
 
@@ -7,7 +10,7 @@ class VotesController < ApplicationController
     @vote.survey_movie_id = @survey_movie.id
 
     if @vote.save
-      render text: "Thanks for voting bro..."
+      render 'confirmation'
     end
   end
 end
