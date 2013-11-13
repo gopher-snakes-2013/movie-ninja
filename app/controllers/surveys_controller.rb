@@ -23,7 +23,6 @@ class SurveysController < ApplicationController
   end
 
   def show
-    @user = User.new
 
     @survey = Survey.find_by_url(params[:survey_url])
     @movie_list = @survey.movies
@@ -32,6 +31,7 @@ class SurveysController < ApplicationController
     if current_user == @survey.user
       render 'show'
     else
+      @user = User.new
       render 'survey_visitor'
     end
   end
