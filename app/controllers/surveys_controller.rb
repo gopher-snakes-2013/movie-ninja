@@ -2,8 +2,6 @@ class SurveysController < ApplicationController
 
   include SessionHelper
 
-  before_filter :enforce_login
-
   def new
     enforce_login
     @survey = Survey.new
@@ -25,6 +23,8 @@ class SurveysController < ApplicationController
   end
 
   def show
+    @user = User.new
+
     @survey = Survey.find_by_url(params[:survey_url])
     @movie_list = @survey.movies
     @survey_id = @survey.id

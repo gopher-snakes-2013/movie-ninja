@@ -1,15 +1,3 @@
 <div class = "movie-list">
   <%= render partial: "surveys/survey_movie", collection: @movie_list, as: :movie %>
 </div>
-
-<form id="vote-form" method='post' action=<%= votes_path %>>
-  <legend> Your Ninja Vote! </legend>
-  <ul>
-    <% @movie_list.each do |movie| %>
-      <li><input type="radio" name="movie_id_voted_on" value=<%= movie.id %> ><span><%= movie.title %></span></li>
-      <input type="hidden" name="survey_id" value=<%= @survey.id %> >
-    <% end %>
-  </ul>
-  <input type="textfield" id="voter_name_field" name="voter_name" placeholder="Your Name" required>
-  <input type="submit" value="Vote">
-</form>
