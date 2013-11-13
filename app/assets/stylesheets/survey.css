@@ -48,7 +48,7 @@ h3.movie-survey-header {
   font-size: 24px;
 }
 
-@media (max-width: 500px){
+@media (max-width: 550px){
   .movie-list {
     max-width: 450px;
   }

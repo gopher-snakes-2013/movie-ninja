@@ -1,5 +1,5 @@
 <div class = "movie-list">
-  <%= render partial: :movie, collection: @movie_list, as: :movie %>
+  <%= render partial: 'movies/movie-voting', collection: @movie_list, as: :movie %>
 </div>
 
 <form id="vote-form" method='post' action=<%= votes_path %>>
