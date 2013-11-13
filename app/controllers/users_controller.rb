@@ -21,4 +21,11 @@ class UsersController < ApplicationController
       redirect_to root_path, flash: { error: @user.errors.full_messages.to_sentence }
     end
   end
+
+  def show
+    @user = current_user || User.new
+    if current_user
+      render: :user_surveys
+    end
+  end
 end
