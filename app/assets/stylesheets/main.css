@@ -1,7 +1,7 @@
 body {
   font-family: sans-serif;
   font-size: 16px;
-  background-color: #f2edd6;
+  background-color: gray;
 }
 
 .container {
@@ -11,7 +11,6 @@ body {
   margin-left: auto;
   margin-bottom: 3em;
   border-radius: 10px;
-  background-color: red;
   position: relative;
 }
 

@@ -1,0 +1,9 @@
+<h2>Here's your survey!</h2>
+<h3>Information:</h3>
+<p><%= @survey.info %></p>
+<p>Send this survey link to your friends:</p>
+<%= link_to: "My awesome survey", survey_path(@survey.url) %>
+<p>Movie at: <%= @survey.first_available_datetime.strftime("%b %d, %Y") %></p>
+<div class = "movie-list">
+  <%= render partial: :movie, collection: @movie_list, as: :movie %>
+</div>

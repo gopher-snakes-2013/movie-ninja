@@ -2,7 +2,7 @@ class SurveysController < ApplicationController
 
   include SessionHelper
 
-  before_filter :enforce_login
+  before_filter :enforce_login, except: [:show]
 
   def new
     enforce_login
@@ -16,6 +16,7 @@ class SurveysController < ApplicationController
     @survey = current_user.surveys.new
     @survey.info = params[:survey][:info]
     @survey.movie_ids = params[:survey][:movie_ids]
+    @survey.first_available_datetime = params[:survey][:first_available_datetime]
     if @survey.save
       redirect_to survey_path(@survey.url)
     else
@@ -28,6 +29,11 @@ class SurveysController < ApplicationController
     @survey = Survey.find_by_url(params[:survey_url])
     if current_user == @survey.user
       @movie_list = @survey.movies
+      render :survey_confirmation
+    else
+      @user = User.new
+      @movies = @survey.movies
+      render :show
     end
   end
 end
