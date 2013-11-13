@@ -19,8 +19,4 @@ module SessionHelper
       flash[:error] = "You must be logged in to access that page."
     end
   end
-
-  def session_url
-    @survey_path = session[:survey_url]
-  end
 end
