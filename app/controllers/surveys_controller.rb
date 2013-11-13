@@ -5,14 +5,12 @@ class SurveysController < ApplicationController
   before_filter :enforce_login, except: [:show]
 
   def new
-    enforce_login
     @survey = Survey.new
     @movies = Movie.where(release_status: 'wide').sample(21)
     @user = current_user
   end
 
   def create
-    enforce_login
     @survey = current_user.surveys.new
     @survey.info = params[:survey][:info]
     @survey.movie_ids = params[:survey][:movie_ids]
@@ -27,22 +25,18 @@ class SurveysController < ApplicationController
 
   def show
     @survey = Survey.find_by_url(params[:survey_url])
+    @movie_list = @survey.movies
+    @survey_id = @survey.id
+
     if current_user == @survey.user
-      @movie_list = @survey.movies
       @votes = {}
       @survey.survey_movies.each do |sm|
         @votes[sm.movie_id] = sm.votes.length
       end
-      @votes_names = {}
-      @survey.survey_movies.each do |sm|
-        @votes_names[sm.movie_id] = []
-
-      end
       render :survey_confirmation
     else
       @user = User.new
-      @movies = @survey.movies
-      render :show
+      render 'survey_visitor'
     end
   end
 end

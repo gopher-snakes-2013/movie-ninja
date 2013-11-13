@@ -96,3 +96,12 @@ h3.movie-survey-header {
 .enqueue-movie-button:hover{
   opacity: 1;
 }
+
+.vote{
+  opacity: .4;
+  color: black;
+}
+
+.vote:hover{
+  opacity: 1;
+}
