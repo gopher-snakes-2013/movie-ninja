@@ -29,7 +29,16 @@ class SurveysController < ApplicationController
     @survey = Survey.find_by_url(params[:survey_url])
     if current_user == @survey.user
       @movie_list = @survey.movies
-      render "survey_confirmation"
+      @votes = {}
+      @survey.survey_movies.each do |sm|
+        @votes[sm.movie_id] = sm.votes.length
+      end
+      @votes_names = {}
+      @survey.survey_movies.each do |sm|
+        @votes_names[sm.movie_id] = []
+
+      end
+      render :survey_confirmation
     else
       @user = User.new
       @movies = @survey.movies
