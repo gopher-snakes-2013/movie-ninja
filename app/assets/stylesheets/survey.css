@@ -42,7 +42,7 @@
   display: none;
 }
 
-h3 {
+h3.movie-survey-header {
   text-align: center;
   margin: 5px;
   font-size: 24px;

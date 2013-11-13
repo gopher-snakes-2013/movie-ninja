@@ -29,7 +29,7 @@ class SurveysController < ApplicationController
     @survey = Survey.find_by_url(params[:survey_url])
     if current_user == @survey.user
       @movie_list = @survey.movies
-      render :survey_confirmation
+      render "survey_confirmation"
     else
       @user = User.new
       @movies = @survey.movies
