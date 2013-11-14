@@ -1,0 +1,24 @@
+<div id="page-welcome">
+  <h1>Welcome to Movie Ninja</h1>
+  <p>The place to schedule movies with your friends! <br>
+    <p><a href="#myModal-signin" data-toggle="modal">Login</a> to plan your next movie-outing.</p>
+</div>
+
+<div class = "movies-sample-list">
+  <% @movies_sample.each do |movie| %>
+    <div class = "movie-box-on-home" data-id=<%=movie.id%>>
+      <div class = "movie-box-poster">
+        <%= image_tag(movie.det_poster_url) %>
+      </div>
+      <div class = "movie-box-title">
+        <%= movie.title %>
+      </div>
+      <div class = "movie-box-critics-score collapsed">
+        Tomato Score: <%= movie.rt_critics_score %>
+      </div>
+      <div class = "movie-box-mpaa-rating collapsed">
+        <%= movie.mpaa_rating %>
+      </div>
+    </div>
+  <% end %>
+</div>

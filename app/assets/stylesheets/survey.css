@@ -7,7 +7,7 @@
   margin-right: 5px;
   margin-left: 10px;
   padding-top: 0.5em;
-  background-color: #9ca98c;
+  background-color: #383838;
   border-radius: 10px;
   position: absolute;
   z-index: -5;
@@ -30,9 +30,8 @@
 }
 
 .movie-box-title {
-  font-weight: 600;
   margin-top: 5px;
-  margin-bottom: 5px;
+  color: black;
 }
 
 .selected {
@@ -47,6 +46,8 @@ h3.movie-survey-header {
   text-align: center;
   margin: 5px;
   font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(152, 150, 150, 1);
 }
 
 @media (max-width: 550px){

@@ -17,4 +17,8 @@ class User < ActiveRecord::Base
     return true if object.respond_to? :user_id && object.user_id == self.id
     false
   end
+
+  def has_surveys?
+    self.surveys.any?
+  end
 end
