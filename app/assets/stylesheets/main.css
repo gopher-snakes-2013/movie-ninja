@@ -70,18 +70,21 @@ body {
   border-radius: 10px;
   position: relative;
   max-width: 75%;
-  background-color: transparent;
 }
 
 .survey-info {
-  margin: 2em;
+  margin: 1em;
+  padding: 1em;
   color: #222;
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: inline-block;
 }
 
 .movie-list-confirmation {
   clear: both;
   float: left;
-  max-width: 70%;
+  max-width: 100%;
   text-align: center;
   margin-top: 1em;
   margin-left: 7%;

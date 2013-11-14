@@ -1,1 +1,18 @@
-<h1>Thanks for voting!</h1>
+<div class = "survey-confirmation-info">
+  <h1>Thanks for voting!</h1>
+  <p>You voted for:</p>
+  <div class = "movie-box" data-id=<%=@movie.id%>>
+    <div class = "movie-box-poster">
+      <%= image_tag(@movie.det_poster_url) %>
+    </div>
+    <div class = "movie-box-title">
+      <%= @movie.title %>
+    </div>
+    <div class = "movie-box-critics-score collapsed">
+      Tomato Score: <%= @movie.rt_critics_score %>
+    </div>
+    <div class = "movie-box-mpaa-rating collapsed">
+      <%= @movie.mpaa_rating %>
+    </div>
+  </div>
+</div>

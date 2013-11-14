@@ -25,18 +25,26 @@ class SurveysController < ApplicationController
 
   def show
     @survey = Survey.find_by_url(params[:survey_url])
-    @movie_list = @survey.movies
-    @survey_id = @survey.id
-
-    if current_user == @survey.user
-      @votes = {}
-      @survey.survey_movies.each do |sm|
-        @votes[sm.movie_id] = sm.votes.length
+    if @survey
+      @movie_list = @survey.movies
+      @survey_id = @survey.id
+      if current_user == @survey.user
+        @votes = {}
+        @survey.survey_movies.each do |sm|
+          @votes[sm.movie_id] = sm.votes.length
+        end
+        @vote_names = {}
+        @survey.survey_movies.each do |sm|
+          @vote_names[sm.movie_id] = sm.votes.map { |vote| vote.name }
+        end
+        render :survey_confirmation
+      else
+        @user = User.new
+        render 'survey_visitor'
       end
-      render :survey_confirmation
     else
-      @user = User.new
-      render 'survey_visitor'
+      flash[:error] = "No survey at that URL"
+      redirect_to root_path
     end
   end
 end
