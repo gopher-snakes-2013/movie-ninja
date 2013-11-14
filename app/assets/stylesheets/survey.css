@@ -47,6 +47,16 @@
   margin-bottom: 5px;
 }
 
+ul.movie-votes-names {
+  margin: 0.5em;
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.movie-votes-names li{
+  text-align: center;
+}
+
 .selected {
   background-color: red;
 }

@@ -8,6 +8,11 @@
   <div class = "movie-votes">
     <strong>Votes: <%= @votes[movie.id] %></strong>
   </div>
+  <ul class = "movie-votes-names">
+    <% @vote_names[movie.id].each do |voter| %>
+      <li><%=  voter %></li>
+    <% end %>
+  </ul>
   <div class = "movie-box-critics-score collapsed">
     Tomato Score: <%= movie.rt_critics_score %>
   </div>

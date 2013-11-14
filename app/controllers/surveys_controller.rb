@@ -33,6 +33,10 @@ class SurveysController < ApplicationController
         @survey.survey_movies.each do |sm|
           @votes[sm.movie_id] = sm.votes.length
         end
+        @vote_names = {}
+        @survey.survey_movies.each do |sm|
+          @vote_names[sm.movie_id] = sm.votes.map { |vote| vote.name }
+        end
         render :survey_confirmation
       else
         @user = User.new
