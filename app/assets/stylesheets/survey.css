@@ -30,6 +30,7 @@
 }
 
 .movie-box-title {
+  font-weight: 600;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -71,8 +72,10 @@ h3.movie-survey-header {
     font-size: 16px;
     margin-bottom: 5px;
   }
+  .enqueue-movie-button {
+    display: none;
+  }
   .movie-box-critics-score {
-    position: absolute;
     margin-left: 80px;
     margin-top: 25px;
   }

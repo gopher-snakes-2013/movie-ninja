@@ -10,7 +10,6 @@ gem 'bcrypt-ruby'
 gem 'httparty'
 gem 'fuzzily'
 
-
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

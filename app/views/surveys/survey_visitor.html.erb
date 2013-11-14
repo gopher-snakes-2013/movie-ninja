@@ -1,3 +1,10 @@
+<div class = "survey-confirmation-info">
+  <h2>Survey created by: <%=@survey.user.email %></h2>
+  <h3>Information:</h3>
+  <p class = "survey-info"><%= @survey.info %></p>
+  <p>Plan to go on: <%= @survey.first_available_datetime.strftime("%b %d, %Y") %></p>
+</div>
+
 <div class = "movie-list">
   <%= render partial: 'movies/movie-voting', collection: @movie_list, as: :movie %>
 </div>
@@ -6,7 +13,7 @@
   <legend> Your Ninja Vote! </legend>
   <ul>
     <% @movie_list.each do |movie| %>
-      <li><input type="radio" name="movie_id_voted_on" value=<%= movie.id %> ><span><%= movie.title %></span></li>
+      <li><input type="radio" name="movie_id_voted_on" value=<%= movie.id %> ><span>  <%= movie.title %></span></li>
       <input type="hidden" name="survey_id" value=<%= @survey.id %> >
     <% end %>
   </ul>

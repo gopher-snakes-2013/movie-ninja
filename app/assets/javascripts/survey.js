@@ -38,6 +38,8 @@ var Survey = {
       var title = $(".movie-box[data-id=" + movieId + "] > .movie-box-title").text();
       $('#selected-movies').append("<div><a href='#'><i class='fa fa-times remove-movie' data-id=" + movieId + "></a></i>" + title + "</div>");
       $('[data-id='+movieId+']').find('.enqueue-movie-button').fadeTo(1,1);
+      $('[data-id='+movieId+']').find('.fa-plus-square').addClass('fa-minus-square');
+      $('[data-id='+movieId+']').find('.fa-plus-square').removeClass('fa-plus-square');
       selectedMovies.push(movieId);
     };
   },
@@ -45,6 +47,8 @@ var Survey = {
   removeMovieFromSurvey: function(movieId){
     selectedMovies.splice(selectedMovies.indexOf(movieId), 1);
     $('[data-id='+movieId+']').find('.enqueue-movie-button').fadeTo(1,.4);
+    $('[data-id='+movieId+']').find('.fa-minus-square').addClass('fa-plus-square');
+    $('[data-id='+movieId+']').find('.fa-minus-square').removeClass('fa-minus-square');
     $('#selected-movies').find('[data-id=' + movieId + ']').parent().parent().remove();
   },
 

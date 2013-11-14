@@ -1,9 +1,11 @@
 <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
   <%= image_tag "ninja.svg", { id: 'logo'}%>
-  <a href=<%= root_path%> id="heading" class="pure-menu-heading">Movie Ninja</a>
+  <%= link_to "Movie Ninja", root_path, class: "pure-menu-heading" %>
   <ul>
     <% if signed_in? %>
-      <li><a href="#" id="toggle-sidebar-link"><i class="fa fa-bars" id="toggle-sidebar-button"></i></a></li>
+      <% if request.fullpath == new_survey_path %>
+        <li><a href="#" id="toggle-sidebar-link"><i class="fa fa-bars" id="toggle-sidebar-button"></i></a></li>
+      <% end %>
       <li><%= button_to "Logout", session_path(current_user), class: 'pure-button', id: 'logout-button', method: :delete %></li>
     <% else %>
       <li><button class="pure-button" data-toggle="modal" href="#myModal" id="login-button">Login</button></li>

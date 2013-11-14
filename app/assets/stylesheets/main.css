@@ -36,7 +36,7 @@ width: 34px;
 }
 
 .container {
-  max-width: 1024px;
+  max-width: 1400px;
   margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
@@ -81,4 +81,13 @@ width: 34px;
   border: 1px solid;
   border-radius: 5px;
   background-color: rgb(242, 222, 222);
+}
+
+.pure-menu ul {
+  float: right;
+}
+
+.pure-menu-heading {
+  font-size: 24px;
+  margin-top: 1em;
 }

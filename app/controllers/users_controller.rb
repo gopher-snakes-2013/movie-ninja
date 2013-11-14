@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   include SessionHelper
 
   def index
-    @movies_sample = Movie.where(release_status: 'wide').sample(5)
+    @movies_sample = Movie.where(release_status: 'wide').sample(8)
 
     @user = current_user || User.new
     if current_user
@@ -21,6 +21,13 @@ class UsersController < ApplicationController
       redirect_to new_survey_path
     else
       redirect_to root_path, flash: { error: @user.errors.full_messages.to_sentence }
+    end
+  end
+
+  def show
+    @user = current_user || User.new
+    if current_user
+      render: :user_surveys
     end
   end
 end
