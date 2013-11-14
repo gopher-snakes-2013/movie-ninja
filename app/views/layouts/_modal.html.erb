@@ -3,18 +3,42 @@
   <%= link_to "Movie Ninja", root_path, class: "pure-menu-heading", id: "heading" %>
   <ul>
     <% if signed_in? %>
+      <li><a href="#myModal-user-surveys" data-toggle="modal" id="my-surveys-link"><%= image_tag "my_surveys.svg",{id: 'my-surveys-button'} %></a></li>
       <% if request.fullpath == new_survey_path %>
+
         <li><a href="#" id="toggle-sidebar-link"><i class="fa fa-bars" id="toggle-sidebar-button"></i></a></li>
       <% end %>
-      <li><%= button_to "Logout", sessions_path(current_user), class: 'pure-button', id: 'logout-button', method: :delete %></li>
+      <li><%= button_to "Logout", sessions_path, class: 'pure-button', id: 'logout-button', method: :delete %></li>
+
     <% else %>
-      <li><button class="pure-button" data-toggle="modal" href="#myModal" id="login-button">Login</button></li>
+      <li><button class="pure-button" data-toggle="modal" href="#myModal-signin" id="login-button">Login</button></li>
     <% end %>
   </ul>
 </div>
 
+<div id="myModal-user-surveys" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h2 id="myModalLabel">My Current Surveys</h2>
+  </div>
+
+ <div id="user-surveys">
+  <ul>
+      <% Survey.where(user_id: session[:current_user_id]).each do |survey| %>
+        <li><b>Movie date on:</b> <%= survey.first_available_datetime.strftime("%b %d, %Y") %></li>
+        <li><b>Movies:</b> <%= survey.movies.map{ |movie| movie.title}.join(', ') %></li>
+        <li><a href=<%= survey_path(survey.url) %>>Link to Survey</a></li>
+      </br>
+      <% end %>
+  </ul>
+</div>
+
+  <div class="modal-footer">
+    <button class="pure-button" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+
 <% unless signed_in? %>
-  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div id="myModal-signin" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
       <h2 id="myModalLabel">Sign In / Sign Up</h2>
     </div>

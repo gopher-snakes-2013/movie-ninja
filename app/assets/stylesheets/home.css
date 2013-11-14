@@ -1,0 +1,33 @@
+.movies-sample-list {
+  clear: both;
+  max-width: 70%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  padding: 3em;
+  background-color: #383838;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+#page-welcome {
+  margin-top: 5em;
+  text-align: center;
+}
+
+#page-welcome a {
+ text-decoration: none;
+ color: #c0392b;
+}
+
+.movie-box-on-home {
+  width: 18%;
+  display: inline-table;
+  margin: 12px;
+  background-color: #dfded4;
+  border-radius: 5px;
+  padding: 0.75em;
+  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 1px 6px rgba(23, 69, 88, .5);
+}

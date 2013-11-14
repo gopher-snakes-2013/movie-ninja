@@ -1,16 +1,15 @@
 #sidebar {
-  color: white;
   border-top-left-radius:.5em;
   border-bottom-left-radius:.5em;
+  background-color: #97887B;
+  color: white;
   position: fixed;
   height: 85%;
   margin-top: 1em;
   right: 0;
   width: 28%;
-  background-color: #34495e;
   -webkit-box-shadow: 0px 0px 12px rgba(0,0,0,0.4);
   -moz-box-shadow: 0px 2px 12px rgba(23,69,88,0.5);
-  background: rgba(52, 73, 94, .7);
 }
 
 #sidebar-content {
@@ -19,6 +18,7 @@
   padding-left: 1em;
   padding-right: 1em;
   height: 100%;
+
 }
 
 #sidebar-heading {
@@ -33,13 +33,12 @@
   width: 100%;
   height: 30%;
   margin: 0 auto;
-  -webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
-  -moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
   box-shadow: inset 2px 2px 2px 0px #dddddd;
   margin-top: .5em;
   border-radius: 3px;
   border: 2px inset;
   font-family: 'Open Sans';
+
 }
 
 #submit-survey {
@@ -80,10 +79,20 @@
 }
 
 #toggle-sidebar-button {
+  margin-top: 1px;
+  color: black;
   font-size: 1.5em;
 }
 
 #toggle-sidebar-link:hover {
   background-color:#ffffff;
+<<<<<<< HEAD
   margin-right: 20px;
 }
+=======
+}
+
+#toggle-sidebar-link {
+  background-color:#ffffff;
+}
+>>>>>>> 9dece2c8e10328bb5189e500d59ceb5d1dec53f4
