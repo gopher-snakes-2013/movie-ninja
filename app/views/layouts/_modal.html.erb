@@ -3,6 +3,7 @@
   <%= link_to "Movie Ninja", root_path, class: "pure-menu-heading", id: "heading" %>
   <ul>
     <% if signed_in? %>
+      <li><%= @user.email %></li>
       <% if request.fullpath == new_survey_path %>
         <li><a href="#" id="toggle-sidebar-link"><i class="fa fa-bars" id="toggle-sidebar-button"></i></a></li>
       <% end %>
