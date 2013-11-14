@@ -5,7 +5,7 @@
   <p>Plan to go on: <%= @survey.first_available_datetime.strftime("%b %d, %Y") %></p>
 </div>
 
-<div class = "movie-list">
+<div class = "movie-list-confirmation">
   <%= render partial: 'movies/movie-voting', collection: @movie_list, as: :movie %>
 </div>
 

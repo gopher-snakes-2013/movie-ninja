@@ -1,4 +1,4 @@
-.movie-list {
+.movie-list, .movie-list-confirmation {
   clear: both;
   float: left;
   max-width: 70%;
