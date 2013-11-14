@@ -109,3 +109,11 @@ body {
   font-size: 24px;
   margin-top: 1em;
 }
+
+.signup.fake-link a {
+  display: inline-block;
+  text-decoration: none;
+  color: #1d98f2;
+  cursor: pointer;
+}
+
