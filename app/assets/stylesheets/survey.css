@@ -13,6 +13,12 @@
   z-index: -5;
 }
 
+.movie-list-confirmation {
+  max-width: 85%;
+  margin: 10px 2em;
+  padding: 0.5em;
+}
+
 .movie-box, .movie-box-votes {
   width: 20%;
   display: inline-table;
@@ -69,7 +75,6 @@ h3.movie-survey-header {
   margin: 5px;
   font-size: 24px;
   color: white;
-  text-shadow: 1px 1px 3px rgba(152, 150, 150, 1);
 }
 
 @media (max-width: 550px){
