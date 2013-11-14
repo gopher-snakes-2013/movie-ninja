@@ -6,7 +6,7 @@
   <h3>Send this survey link to your friends:</h3>
   <%= link_to survey_url(@survey.url) %>
 </div>
-<% if @movie_list.empty? %>
+<% if !@movie_list.empty? %>
   <div class = "movie-list-confirmation">
     <%= render partial: 'movies/movie-votes-count', collection: @movie_list, as: :movie %>
   </div>
