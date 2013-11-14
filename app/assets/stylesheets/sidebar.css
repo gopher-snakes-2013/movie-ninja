@@ -35,22 +35,21 @@
   margin: 0 auto;
   box-shadow: inset 2px 2px 2px 0px #dddddd;
   margin-top: .5em;
-  border-radius: .3px;
+  border-radius: .3em;
   border: 2px inset;
   font-family: 'Open Sans';
 
 }
 
 #submit-survey {
-  border-radius: .3px;
+  border-radius: .3em;
   border: 2px inset;
   margin-top: .5em;
   font-family: 'Open Sans'
 }
 
 #datepicker {
-  border-radius: .3px;
-  margin-top: .4em;
+  border-radius: .3em;
   font-family: 'Open Sans';
   padding: .5em 1.5em;
   font-size: 93%
@@ -89,10 +88,6 @@
 
 #toggle-sidebar-link:hover {
   background-color:#ffffff;
-  margin-right: 20px;
-}
-
-#toggle-sidebar-link {
-  background-color:#ffffff;
+<<<<<<< HEAD
 }
 
