@@ -77,12 +77,19 @@ h3.movie-survey-header {
   color: white;
 }
 
-@media (max-width: 550px){
+@media (max-width: 500px){
   .movie-list, .movie-list-confirmation {
     max-width: 450px;
+    margin-top: 2em;
+  }
+  #movie-preview-container {
+    margin-top: 2em;
   }
   .collapsed {
     display: block;
+  }
+  #sidebar {
+    margin-top: 2em;
   }
   h3.movie-survey-header {
     font-size: 16px;
