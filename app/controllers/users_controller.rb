@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   include SessionHelper
 
   def index
+    @movies_sample = Movie.where(release_status: 'wide').sample(5)
+
     @user = current_user || User.new
     if current_user
       redirect_to new_survey_path

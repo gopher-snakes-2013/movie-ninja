@@ -1,11 +1,12 @@
 <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-  <a class="pure-menu-heading">Movie Ninja</a>
+  <%= image_tag "ninja.svg", { id: 'logo'}%>
+  <a href=<%= root_path%> id="heading" class="pure-menu-heading">Movie Ninja</a>
   <ul>
     <% if signed_in? %>
-      <li><a href="#"><i class="fa fa-bars" id="toggle-sidebar-button"></i></a></li>
-      <li><%= button_to "logout", session_path(current_user), class: 'pure-button', method: :delete %></li>
+      <li><a href="#" id="toggle-sidebar-link"><i class="fa fa-bars" id="toggle-sidebar-button"></i></a></li>
+      <li><%= button_to "Logout", session_path(current_user), class: 'pure-button', id: 'logout-button', method: :delete %></li>
     <% else %>
-      <li><button class="pure-button" data-toggle="modal" href="#myModal">Login</button></li>
+      <li><button class="pure-button" data-toggle="modal" href="#myModal" id="login-button">Login</button></li>
     <% end %>
   </ul>
 </div>
