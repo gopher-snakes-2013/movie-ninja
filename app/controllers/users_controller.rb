@@ -24,10 +24,4 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = current_user || User.new
-    if current_user
-      render: :user_surveys
-    end
-  end
 end
