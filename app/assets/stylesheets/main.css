@@ -21,6 +21,7 @@ body {
   line-height: 7px;
   padding-right: 61px;
   margin-right: 5px;
+  font-family: 'Open Sans';
 }
 
 #logout-button{
@@ -31,6 +32,7 @@ body {
   padding-left: 12px;
   padding-right: 61px;
   margin-right: 5px;
+  font-family: 'Open Sans';
 }
 
 #logo{

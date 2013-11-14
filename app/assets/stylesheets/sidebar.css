@@ -25,19 +25,35 @@
   margin-left: 10px;
 }
 
+#new_survey {
+  font-family: 'Open Sans'
+}
+
 #survey-comment {
   width: 100%;
   height: 30%;
   margin: 0 auto;
   box-shadow: inset 2px 2px 2px 0px #dddddd;
   margin-top: .5em;
-  border: 1px solid #cccccc;
-  box-shadow: 0 2px 5px #888888;
-  border-radius: 5px;
+  border-radius: .3px;
+  border: 2px inset;
+  font-family: 'Open Sans';
+
 }
 
 #submit-survey {
+  border-radius: .3px;
+  border: 2px inset;
   margin-top: .5em;
+  font-family: 'Open Sans'
+}
+
+#datepicker {
+  border-radius: .3px;
+  margin-top: .4em;
+  font-family: 'Open Sans';
+  padding: .5em 1.5em;
+  font-size: 93%
 }
 
 #selected-movies {
@@ -73,9 +89,11 @@
 
 #toggle-sidebar-link:hover {
   background-color:#ffffff;
+  margin-right: 20px;
 }
 
 #toggle-sidebar-link {
   position: relative;
   background-color:#ffffff;
 }
+

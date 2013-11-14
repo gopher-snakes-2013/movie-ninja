@@ -6,10 +6,14 @@
     <%= movie.title %>
     <a href="#"><span class="enqueue-movie-button" data-id=<%=movie.id%>><i class="fa fa-plus-square"></i></span></a>
   </div>
-  <div class = "movie-box-critics-score collapsed">
-    Tomato Score: <%= movie.rt_critics_score %>
-  </div>
-  <div class = "movie-box-mpaa-rating collapsed">
-    <%= movie.mpaa_rating %>
-  </div>
+
+  <ul class = "movie-box-info collapsed">
+    <li><%= movie.runtime %> minutes</li>
+    <li>(<%= movie.mpaa_rating %>)</li>
+  </ul>
+
+  <ul class = "movie-box-scores collapsed">
+    <li>Critics: <%= movie.rt_critics_score %>%</li>
+    <li>Audience: <%= movie.rt_audience_score %>%</li>
+  </ul>
 </div>
