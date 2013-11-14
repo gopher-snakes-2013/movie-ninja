@@ -66,6 +66,7 @@ body {
 .survey-confirmation-info {
   text-align: left;
   margin: 2em;
+  margin-bottom: 0;
   padding: 10px;
   border-radius: 10px;
   position: relative;
@@ -79,21 +80,6 @@ body {
   border: 1px solid gray;
   border-radius: 5px;
   display: inline-block;
-}
-
-.movie-list-confirmation {
-  clear: both;
-  float: left;
-  max-width: 100%;
-  text-align: center;
-  margin-top: 1em;
-  margin-left: 7%;
-  margin-right: 7%;
-  padding: 0.5em;
-  background-color: #383838;
-  border-radius: 10px;
-  position: absolute;
-  z-index: -5;
 }
 
 .error {
