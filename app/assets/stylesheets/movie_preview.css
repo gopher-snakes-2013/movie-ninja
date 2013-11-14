@@ -15,7 +15,7 @@
 }
 
 .movie-preview-title {
-  padding: 0;
+  padding-left: .1em;
   margin-top: .5em;
   margin-bottom: .25em;
   font-size: 150%;
