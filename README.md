@@ -19,6 +19,3 @@ Extra Stuff
 * Movie Previews
 * Twilio to send out text messages
 * Responsive/mobile inteface
-
-ROTTEN_API_KEY=z9rcfwsnkafcdrwpxhqsaqqy
-ON_CONNECT_API_KEY=hbgufuthmhqnbsn4qm8kqj22
