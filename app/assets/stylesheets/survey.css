@@ -1,4 +1,4 @@
-.movie-list {
+.movie-list, .movie-list-confirmation {
   clear: both;
   float: left;
   max-width: 70%;
@@ -13,8 +13,26 @@
   z-index: -5;
 }
 
+.movie-list-confirmation {
+  max-width: 85%;
+  margin: 10px 2em;
+  padding: 0.5em;
+}
+
 .movie-box, .movie-box-votes {
   width: 20%;
+  display: inline-table;
+  margin: 5px;
+  background-color: #dfded4;
+  border-radius: 5px;
+  padding: 0.75em;
+  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 1px 6px rgba(23, 69, 88, .5);
+}
+
+.survey-confirmation-info > .movie-box {
+  width: 204px;
+  text-align: center;
   display: inline-table;
   margin: 5px;
   background-color: #dfded4;
@@ -34,6 +52,16 @@
   color: black;
 }
 
+ul.movie-votes-names {
+  margin: 0.5em;
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.movie-votes-names li{
+  text-align: center;
+}
+
 .selected {
   background-color: red;
 }
@@ -47,7 +75,6 @@ h3.movie-survey-header {
   margin: 5px;
   font-size: 24px;
   color: white;
-  text-shadow: 1px 1px 3px rgba(152, 150, 150, 1);
 }
 
 @media (max-width: 550px){

@@ -8,6 +8,7 @@ class VotesController < ApplicationController
 
     @vote.name = params[:voter_name]
     @vote.survey_movie_id = @survey_movie.id
+    @movie = @vote.survey_movie.movie
 
     if @vote.save
       render 'confirmation'

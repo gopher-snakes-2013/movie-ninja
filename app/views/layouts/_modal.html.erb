@@ -3,9 +3,9 @@
   <%= link_to "Movie Ninja", root_path, class: "pure-menu-heading", id: "heading" %>
   <ul>
     <% if signed_in? %>
+      <li><%= @user.email %></li>
       <li><a href="#myModal-user-surveys" data-toggle="modal" id="my-surveys-link"><%= image_tag "my_surveys.svg",{id: 'my-surveys-button'} %></a></li>
       <% if request.fullpath == new_survey_path %>
-
         <li><a href="#" id="toggle-sidebar-link"><i class="fa fa-bars" id="toggle-sidebar-button"></i></a></li>
       <% end %>
       <li><%= button_to "Logout", sessions_path, class: 'pure-button', id: 'logout-button', method: :delete %></li>
