@@ -23,6 +23,18 @@
   -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0px 1px 6px rgba(23, 69, 88, .5);
 }
+
+.survey-confirmation-info > .movie-box {
+  width: 204px;
+  text-align: center;
+  display: inline-table;
+  margin: 5px;
+  background-color: #dfded4;
+  border-radius: 5px;
+  padding: 0.75em;
+  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 1px 6px rgba(23, 69, 88, .5);
+}
 .movie-box-poster img {
   height: 267px;
   width: 180px;
