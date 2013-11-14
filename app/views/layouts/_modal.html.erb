@@ -1,13 +1,14 @@
 <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
+  <%= image_tag "ninja.svg", { id: 'logo'}%>
   <%= link_to "Movie Ninja", root_path, class: "pure-menu-heading" %>
   <ul>
     <% if signed_in? %>
       <% if request.fullpath == new_survey_path %>
-        <li><a href="#"><i class="fa fa-bars" id="toggle-sidebar-button"></i></a></li>
+        <li><a href="#" id="toggle-sidebar-link"><i class="fa fa-bars" id="toggle-sidebar-button"></i></a></li>
       <% end %>
-      <li><%= button_to "logout", sessions_path, class: 'pure-button', method: :delete %></li>
+      <li><%= button_to "Logout", session_path(current_user), class: 'pure-button', id: 'logout-button', method: :delete %></li>
     <% else %>
-      <li><button class="pure-button" data-toggle="modal" href="#myModal">Login</button></li>
+      <li><button class="pure-button" data-toggle="modal" href="#myModal" id="login-button">Login</button></li>
     <% end %>
   </ul>
 </div>
