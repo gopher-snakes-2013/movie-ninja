@@ -9,7 +9,6 @@
         <li><a href="#" id="toggle-sidebar-link"><i class="fa fa-bars" id="toggle-sidebar-button"></i></a></li>
       <% end %>
       <li><%= button_to "Logout", sessions_path, class: 'pure-button', id: 'logout-button', method: :delete %></li>
-
     <% else %>
       <li><button class="pure-button" data-toggle="modal" href="#myModal-signin" id="login-button">Login</button></li>
     <% end %>
@@ -21,16 +20,18 @@
     <h2 id="myModalLabel">My Current Surveys</h2>
   </div>
 
- <div id="user-surveys">
-  <ul>
-      <% Survey.where(user_id: session[:current_user_id]).each do |survey| %>
-        <li><b>Movie date on:</b> <%= survey.first_available_datetime.strftime("%b %d, %Y") %></li>
-        <li><b>Movies:</b> <%= survey.movies.map{ |movie| movie.title}.join(', ') %></li>
-        <li><a href=<%= survey_path(survey.url) %>>Link to Survey</a></li>
-      </br>
-      <% end %>
-  </ul>
-</div>
+   <div id="user-surveys">
+    <% if signed_in? && current_user.has_surveys? %>
+      <ul>
+        <% Survey.where(user_id: session[:current_user_id]).each do |survey| %>
+          <li><b>Movie date on:</b> <%= survey.first_available_datetime.strftime("%b %d, %Y") %></li>
+          <li><b>Movies:</b> <%= survey.movies.map{ |movie| movie.title}.join(', ') %></li>
+          <li><a href=<%= survey_path(survey.url) %>>Link to Survey</a></li>
+        </br>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
 
   <div class="modal-footer">
     <button class="pure-button" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -40,7 +41,7 @@
 <% unless signed_in? %>
   <div id="myModal-signin" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
-      <h2 id="myModalLabel">Sign In / Sign Up</h2>
+       <h2 id="myModalLabel"> <span id="modallogo"><%=image_tag "ninja.svg"%></span>Sign In / Sign Up</h2>
     </div>
 
     <div class="modal-body pure-g">

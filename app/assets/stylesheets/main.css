@@ -36,10 +36,18 @@ body {
 }
 
 #logo{
-position: absolute;
-float: left;
-margin-left: 13px;
-width: 34px;
+  position: absolute;
+  float: left;
+  margin-left: 13px;
+  width: 34px;
+}
+
+#modallogo img {
+  width: 52px;
+  top: 20px;
+  left: 209px;
+  position: absolute;
+  z-index: -1;
 }
 
 #heading {
@@ -85,7 +93,6 @@ width: 34px;
   border-radius: 10px;
   position: absolute;
   z-index: -5;
-  color: white;
 }
 
 .error {
