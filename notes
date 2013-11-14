@@ -1,0 +1,30 @@
+problems:
+first few days: lack of organization and understanding of how to approach idea
+
+started to build things that we didn't use (showtimes, pick location)
+struggled briefly with clearance, then did it ourselves
+
+used pure just for buttons and form (probably not worth it)
+
+broken gem
+
+
+no testing: why?
+we had a lot of features built very quickly
+feature tests written early: just broke and were not considered important to fix
+worked on front end first, build back end as needed, made it hard to write comprehensive tests
+no one pushed for it, getting functional stuff built first felt like more of a priority
+started from survey create page: considered it the centerpiece of the app, built it then decided what to do before and after it
+
+team:
+separated responsibilities according to who wanted to work on what
+made merge conflicts relatively easy
+all pretty chill people
+standups daily and when necessary, let's just check in and regroup
+bringing gary onboard, who hadn't worked on it before
+
+
+what went well:
+sticking to mvp, even though there were tons of features we wanted to add
+doing styling for the first time
+dividing up responsibilities into manageable chunks
