@@ -35,20 +35,21 @@
   margin: 0 auto;
   box-shadow: inset 2px 2px 2px 0px #dddddd;
   margin-top: .5em;
-  border-radius: 3px;
+  border-radius: 4px;
   border: 2px inset;
   font-family: 'Open Sans';
 
 }
 
 #submit-survey {
+  border-radius: 4px;
   border: 2px inset;
   margin-top: .5em;
   font-family: 'Open Sans'
 }
 
 #datepicker {
-  border-radius: 3px;
+  border-radius: 4px;
   height: 38px;
   font-family: 'Open Sans';
 }
