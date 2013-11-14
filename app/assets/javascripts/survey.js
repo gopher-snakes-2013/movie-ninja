@@ -1,6 +1,7 @@
 var Survey = {
   bindEventListeners: function(){
-   $('.movie-box-poster').click(Movie.previewMovie);
+    // use the on syntax, it's preferred
+   $('.movie-box-poster').on('click', Movie.previewMovie);
    $('#toggle-sidebar-button').click(Survey.toggleSideBar);
    $('.enqueue-movie-button').click(Survey.addOrRemoveMovieFromSurvey);
    $('#selected-movies').on('click', 'i', Survey.addOrRemoveMovieFromSurvey);
@@ -36,6 +37,7 @@ var Survey = {
   addMovieToSurvey: function(movieId){
     if(selectedMovies.indexOf(movieId) === -1) {
       var title = $(".movie-box[data-id=" + movieId + "] > .movie-box-title").text();
+      // a better way to solve this is to create a templates hidden div, include this one, clone it, modify it and then inject it.
       $('#selected-movies').append("<div><a href='#'><i class='fa fa-times remove-movie' data-id=" + movieId + "></a></i>" + title + "</div>");
       $('[data-id='+movieId+']').find('.enqueue-movie-button').fadeTo(1,1);
       $('[data-id='+movieId+']').find('.fa-plus-square').addClass('fa-minus-square');
@@ -57,6 +59,7 @@ var Survey = {
     var $form = $(this);
     for (var i in selectedMovies) {
       console.log(selectedMovies[i])
+      // a better way to solve this is to create a templates hidden div, include this one, clone it, modify it and then inject it.
       $form.append("<input type='hidden' name='survey[movie_ids][]' value=" + selectedMovies[i] +" />")
     };
     $form.off("submit");
@@ -66,6 +69,7 @@ var Survey = {
 
 var Movie = {
   previewMovie: function(event){
+    // use remote => true on the link
     event.preventDefault();
     var movieId = $(this).children(":first").data('id')
     $.ajax({
@@ -86,6 +90,7 @@ var Movie = {
 };
 
 $(document).ready(function(){
+  // you're poluting the global namespace with lines 94 & 95
   selectedMovies = [];
   moviePreviewVisible = false;
   Survey.bindEventListeners();
