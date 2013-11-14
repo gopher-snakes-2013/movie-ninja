@@ -76,5 +76,6 @@
 }
 
 #toggle-sidebar-link {
+  position: relative;
   background-color:#ffffff;
 }

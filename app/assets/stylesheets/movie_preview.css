@@ -66,3 +66,7 @@ ul.movie-preview-scores {
 .movie-preview-synopsis::-webkit-scrollbar-thumb {
   background:#999 !important;
 }
+
+#starting-instructions i {
+  padding-right: .5em;
+}
