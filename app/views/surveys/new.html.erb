@@ -12,7 +12,7 @@
     </div>
     <%= form_for @survey do |f| %>
       <textarea id="survey-comment" name="survey[info]" placeholder="Anything else you want your friends to know..." required></textarea>
-      <input type="date" name="survey[first_available_datetime]" id="datepicker" value="<?php echo date('Y-m-d'); ?>" required>
+      <input type="date" name="survey[first_available_datetime]" id="datepicker" required>
       <input type="submit" class="pure-button pure-button-small" id='submit-survey'>
     <% end %>
   </div>
