@@ -87,6 +87,6 @@ var Movie = {
 
 $(document).ready(function(){
   selectedMovies = [];
-  moviePreviewVisible = false;
+  moviePreviewVisible = true;
   Survey.bindEventListeners();
 })
