@@ -5,6 +5,7 @@ Release 2
 * RU can enter zipcode (or we geolocate) to get showtime
 * Survey shows local showtimes and theaters for movies
 * Guest can vote on showtime (along with theater?)
+* Survey list popup shows which movie got most votes
 
 Release 3
 ---------
