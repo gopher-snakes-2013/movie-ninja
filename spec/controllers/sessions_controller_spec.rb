@@ -6,15 +6,15 @@ describe SessionsController do
   describe '#create' do
     it 'should create a new session for the user' do
       post :create , user: { email: user.email, password: 'password'}
-      expect(session[:user_id]).to_not be_nil
+      expect(session[:current_user_id]).to_not be_nil
     end
   end
 
   describe '#destroy' do
-    xit 'should clear sessions hash' do
+    it 'should clear sessions hash' do
       post :create , user: { email: user.email, password: 'password'}
-
-      expect(session[:user_id]).to be_nil
+      delete :destroy
+      expect(session[:current_user_id]).to be_nil
     end
   end
 end
