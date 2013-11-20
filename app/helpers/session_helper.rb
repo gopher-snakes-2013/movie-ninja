@@ -1,5 +1,11 @@
 module SessionHelper
 
+  def login(user)
+    if user && user.authenticate(params[:user][:password])
+      session[:current_user_id] = @user.id
+    end
+  end
+
   def logout
     session.clear
     @user = nil

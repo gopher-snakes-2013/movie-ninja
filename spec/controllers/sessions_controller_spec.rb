@@ -8,6 +8,11 @@ describe SessionsController do
       post :create , user: { email: user.email, password: 'password'}
       expect(session[:current_user_id]).to_not be_nil
     end
+
+    it 'should flash an error if user info is incorrect' do
+      post :create , user: { email: user.email, password: 'wrong_password'}
+      expect(session[:current_user_id]).to be_nil
+    end
   end
 
   describe '#destroy' do
